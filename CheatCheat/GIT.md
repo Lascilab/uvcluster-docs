@@ -8,6 +8,8 @@ Ve a la página oficial de [Github](https://github.com/)
 Puede ser con `git init` pero se sugiere usar los pasos de github
 ## Clonar un repositorio
 `git clone https://---`
+## Revisar qué cambios se han realizado
+`git status`
 ## Guardar los cambios
 `git add -A` y `git commit -m "Comentario"`
 ## Enviar los cambios a un repositorio remoto

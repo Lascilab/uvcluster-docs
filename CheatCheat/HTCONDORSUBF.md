@@ -10,4 +10,5 @@ error = err
 output = out
 ```
 
-
+# Recursos
+[Submitfiles ejemplos de iac.es](http://vivaldi.ll.iac.es/sieinvens/siepedia/pmwiki.php?n=HOWTOs.CondorUsefulCommands)
