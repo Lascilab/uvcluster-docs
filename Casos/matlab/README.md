@@ -1,7 +1,7 @@
 # Matlab, Htcondor y Docker
 
 |Software | Versiones|
-|-----------------|
+|---------|-------|
 |HTCondor | 8.4|
 |Docker Engine | 1.12|
 |Ubuntu | 14.04|
@@ -22,7 +22,7 @@ Sus iniciales indican “MATLAB Compiler Runtime”, un conjunto independiente d
 Cada versión de Matlab trae consigo su respectiva MCR, como se muestra en la siguiente tabla:
 
 |MCR | Matlab |
-|-----------------|
+|-------|--------|
 |R2016b | (Matlab 9.1)|
 |R2015a | (Matlab 8.5)|
 |R2013a | (Matlab 8.1)|
@@ -50,7 +50,7 @@ A grosso modo, una aplicación creada en Matlab para ejecutarse en HTCondor debe
  - Especificar en un submitfile el job que se desea ejecutar 
 
 mult.m
-```
+```matlab
 function[] = mult
     A = [1 2;3 4]
     B = [5 6;7 8]
@@ -67,7 +67,7 @@ http://es.mathworks.com/help/compiler/mcc.html
 Cada argumento tiene su explicación
 
 | Argumento | Explicación |
-|-------------------------|
+|-----------|-------------|
 | -nosplash | Desabilita el splash screen.|
 | -nodisplay | Lanza la aplicación de Matlab sin funcionalidades de interfaces gráficas|
 | -nojvm | Deshabilita la máquina virtual de java(JVM™).|
@@ -168,7 +168,7 @@ Este documento trae consigo una carpeta con ejemplos pueden ser ejecutados para 
 ### Gráficos en Matlab
 Si un programa en Matlab necesita mostrar en la GUI un gráfico, éste puede ser guardado en un disco para su posterior visualización usando la función 
 
-```
+```matlab
 x = [2 4 7 2 4 5 2 5 1 4];
 bar(x);
 saveas(gcf,'Barchart.png')
@@ -176,7 +176,7 @@ saveas(gcf,'Barchart.png')
 
 Ó
 
-```
+```matlab
 h=figure;
 plot(x,y,'-bs','Linewidth',1.4,'Markersize',10);
 % ...
@@ -186,7 +186,7 @@ saveas(h,name,'jpg')
 
 Ó
 
-```
+```matlab
 ## saves the current figure to a file using the specified file format, such as
 ## print('BarPlot','-dpng'). If the file name does not include an extension, then print appends 
 ## the appropriate one.
@@ -198,7 +198,7 @@ print(filename,formattype)
 ### Parametros de Entrada
 Los programas de matlab ‘deberían’ empezar así
 
-```
+```matlab
 if isdeployed
     lastN = maxNumCompThreads(1);
     n = str2num(n);
@@ -210,11 +210,11 @@ Matlab posee bibliotecas y frameworks llamados toolkit (simulink https://es.math
 Recursos
 
 # Recursos
-[1] http://wiki.rac.manchester.ac.uk/community/MatlabWithCondor
-[2] https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToRunMatlab
-[3] https://www.mathworks.com/support/compilers/R2016a/index.html?sec=glnxa64
-[4] http://research.cs.wisc.edu/htcondor/manual/v8.4/3_12Setting_Up.html#SECTION0041215000000000000000
-[5] https://spinningmatt.wordpress.com/2011/06/27/concurrency-limits-protecting-shared-resources/
-[6] http://sysadminhelp.cms.caltech.edu/AOK/HTC/
+ - [1] http://wiki.rac.manchester.ac.uk/community/MatlabWithCondor
+ - [2] https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToRunMatlab
+ - [3] https://www.mathworks.com/support/compilers/R2016a/index.html?sec=glnxa64
+ - [4] http://research.cs.wisc.edu/htcondor/manual/v8.4/3_12Setting_Up.html#SECTION0041215000000000000000
+ - [5] https://spinningmatt.wordpress.com/2011/06/27/concurrency-limits-protecting-shared-resources/
+ - [6] http://sysadminhelp.cms.caltech.edu/AOK/HTC/
 
 
