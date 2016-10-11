@@ -1,0 +1,6 @@
+[Req]
+pandoc
+linx
+make
+[Optional]
+pdflatex
