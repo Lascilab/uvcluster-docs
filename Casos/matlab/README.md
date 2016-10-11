@@ -153,7 +153,7 @@ queue 1
 Este documento trae consigo una carpeta con ejemplos pueden ser ejecutados para mostrar un pequeño rango de funcionalidades provistas por el MCR usando HTCondor, a continuación describimos cada uno en una tabla:
 
 | Nombre | Descripción  |
-| ______________________ |
+|-------------|-------------------|
 | bublP | Un programa de ingeniería química. |
 | hola  | Un script que imprime en consola ‘Hola Mundo’ |
 | colorABN | Un script que lee un grupo de imágenes y las convierte a blanco y negro |
@@ -216,4 +216,5 @@ Recursos
 [4] http://research.cs.wisc.edu/htcondor/manual/v8.4/3_12Setting_Up.html#SECTION0041215000000000000000
 [5] https://spinningmatt.wordpress.com/2011/06/27/concurrency-limits-protecting-shared-resources/
 [6] http://sysadminhelp.cms.caltech.edu/AOK/HTC/
+
 
