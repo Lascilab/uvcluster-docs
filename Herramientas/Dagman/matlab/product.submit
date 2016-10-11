@@ -1,0 +1,14 @@
+universe                = docker
+docker_image            = matlab
+executable              = ./run_product.sh
+matriz                   = $(Process)+1
+arguments               = /opt/mcr/v901 $INT(matriz)
+should_transfer_files   = YES
+transfer_input_files    = product, run_product.sh, input$INT(matriz).mat
+transfer_output_files   = output$INT(matriz).mat
+when_to_transfer_output = ON_EXIT
+output                  = out.$(Process)
+error                   = err.$(Process)
+log                     = log.$(Process)
+environment             = MCR_CACHE_ROOT=/tmp/emptydir;MATLAB_PREFDIR=/tmp/emptydir
+queue 20

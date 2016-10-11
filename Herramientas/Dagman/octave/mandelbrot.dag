@@ -1,0 +1,6 @@
+JOB  A  outcarpeta.submit
+JOB  B  job.submit
+JOB  C  gif.submit
+PARENT A CHILD B
+PARENT B CHILD C
+#Retry B 3

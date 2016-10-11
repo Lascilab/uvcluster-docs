@@ -1,0 +1,12 @@
+universe                = docker
+docker_image            = matlab
+executable              = ./run_montecarlopi.sh
+arguments               = /opt/mcr/v901
+should_transfer_files   = YES
+transfer_input_files    = montecarlopi, run_montecarlopi.sh
+when_to_transfer_output = ON_EXIT
+output                  = out.$(Process)
+error                   = err.$(Process)
+log                     = log.$(Process)
+environment             = MCR_CACHE_ROOT=/tmp/emptydir;MATLAB_PREFDIR=/tmp/emptydir
+queue 1

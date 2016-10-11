@@ -1,0 +1,7 @@
+WARNING: Your kernel does not support swap limit capabilities, memory limited without swap.
+Installing package into ‘/usr/local/lib/R/site-library’
+(as ‘lib’ is unspecified)
+Warning in install.packages("forecast") :
+  'lib = "/usr/local/lib/R/site-library"' is not writable
+Error in install.packages("forecast") : unable to install packages
+Execution halted

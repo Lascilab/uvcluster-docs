@@ -1,0 +1,12 @@
+universe                = docker
+docker_image            = matlab
+executable              = ./run_collect.sh
+arguments               = /opt/mcr/v901 20
+should_transfer_files   = YES
+transfer_input_files    = collect, run_collect.sh, output1.mat, output2.mat, output3.mat, output4.mat, output5.mat, output6.mat, output7.mat, output8.mat, output9.mat, output10.mat, output11.mat, output12.mat, output13.mat, output14.mat, output15.mat, output16.mat, output17.mat, output18.mat, output19.mat, output20.mat
+when_to_transfer_output = ON_EXIT
+output                  = out.$(Process)
+error                   = err.$(Process)
+log                     = log.$(Process)
+environment             = MCR_CACHE_ROOT=/tmp/emptydir;MATLAB_PREFDIR=/tmp/emptydir
+queue 1

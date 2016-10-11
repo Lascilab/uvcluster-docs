@@ -1,0 +1,13 @@
+universe                = docker
+docker_image            = matlab
+executable              = ./run_initialize.sh
+arguments               = /opt/mcr/v901 20
+should_transfer_files   = YES
+transfer_input_files    = initialize, run_initialize.sh
+transfer_output_files   = input1.mat, input2.mat, input3.mat, input4.mat, input5.mat, input6.mat, input7.mat, input8.mat, input9.mat, input10.mat, input11.mat, input12.mat, input13.mat, input14.mat, input15.mat, input16.mat, input17.mat, input18.mat, input19.mat, input20.mat
+when_to_transfer_output = ON_EXIT
+output                  = out.$(Process)
+error                   = err.$(Process)
+log                     = log.$(Process)
+environment             = MCR_CACHE_ROOT=/tmp/emptydir;MATLAB_PREFDIR=/tmp/emptydir
+queue 1

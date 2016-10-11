@@ -1,0 +1,13 @@
+universe                = docker
+docker_image            = matlab
+executable              = ./run_colorABN.sh
+arguments               = /opt/mcr/v901
+should_transfer_files   = YES
+transfer_input_files    = colorABN, run_colorABN.sh, imgs
+transfer_output_files   = finn_gray.png
+when_to_transfer_output = ON_EXIT
+output                  = out.$(Process)
+error                   = err.$(Process)
+log                     = log.$(Process)
+environment             = MCR_CACHE_ROOT=/tmp/emptydir;MATLAB_PREFDIR=/tmp/emptydir
+queue 1

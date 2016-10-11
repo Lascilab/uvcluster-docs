@@ -1,0 +1,19 @@
+## Quienes somos
+...
+
+## ¿Qué es un cluster?
+...
+
+## ¿Con qué contamos?
+Ver readme sobre el cluster
+
+## ¿Cómo obtener ayuda?
+...
+## ¿Por qué alguien usaría un cluster?
+...
+
+## ¿Qué problemas podría resolver?
+...
+
+## ¿Cual es la diferencia entre HPC vs HTC?
+...

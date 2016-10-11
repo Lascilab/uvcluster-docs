@@ -1,0 +1,12 @@
+# sudo apt-get install imagemagick
+executable = /usr/bin/convert
+arguments = -delay 10 -loop 0 pngs/*png output.gif
+universe = vanilla
+should_transfer_files   = YES
+transfer_input_files    = pngs
+transfer_output_files   = output.gif
+when_to_transfer_output = ON_EXIT
+output = example.$(cluster).$(process).out
+error =  example.$(cluster).$(process).err
+log =    example.$(cluster).$(process).log
+queue 10

@@ -1,0 +1,12 @@
+universe                = docker
+docker_image            = 192.168.28.50:5000/python
+executable              = python
+arguments               = hola.py
+should_transfer_files   = YES
+transfer_input_files    = hola.py
+when_to_transfer_output = ON_EXIT
+output                  = out.$(Process)
+error                   = err.$(Process)
+log                     = log.$(Process)
+request_memory          = 10M
+queue 1

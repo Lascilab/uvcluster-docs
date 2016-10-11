@@ -9,6 +9,7 @@ guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los
 > Invitamos a los nuevos usuarios a revisar con especial atención el contenido sobre la "Forma de trabajo"
 
 ### [Introducción](Introduccion/README.md)
+ - ¿Quienes somos?
  - ¿Qué es un cluster?
  - ¿Con qué contamos?
  - ¿Cómo obtener ayuda?
@@ -67,7 +68,12 @@ guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los
 
 ### [Otros](Otros/README.md)
  - Interactivos
- 
+
+### Notas
+Esta documentación puede ser seguida y generada en el cluster usando un [Lynx](http://lynx.browser.org/), [pandoc](http://pandoc.org/demos.html) y Makefile
+`make && lynx index.html`
+
+
 ## Responsables
 [LASCILAB](http://lascilab.univalle.edu.co/)
 > Invitamos a los responsables a revisar el progreso de cada documento [aquí](ESTADO.md)

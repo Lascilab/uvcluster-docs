@@ -1,0 +1,4 @@
+JOB  A  mandelbrot.submit
+JOB  B  stitch.submit
+PARENT A CHILD B
+Retry A 3

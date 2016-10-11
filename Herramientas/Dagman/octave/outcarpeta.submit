@@ -1,0 +1,10 @@
+executable = /bin/mkdir
+arguments = -p /tmp/pngs
+universe = vanilla
+should_transfer_files   = YES
+transfer_output_files   = /tmp/pngs
+when_to_transfer_output = ON_EXIT
+output = example.$(cluster).$(process).out
+error =  example.$(cluster).$(process).err
+log =    example.$(cluster).$(process).log
+queue 1

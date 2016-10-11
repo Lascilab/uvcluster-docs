@@ -1,0 +1,12 @@
+executable = /usr/bin/octave
+#executable = octave
+arguments = mandelbrot.m $(cluster) $(process)
+universe = vanilla
+should_transfer_files   = YES
+transfer_input_files    = pngs, mandelbrot.m
+transfer_output_files   = pngs
+when_to_transfer_output = ON_EXIT
+output = example.$(cluster).$(process).out
+error =  example.$(cluster).$(process).err
+log =    example.$(cluster).$(process).log
+queue 4

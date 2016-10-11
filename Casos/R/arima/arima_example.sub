@@ -1,0 +1,25 @@
+########################################################
+##
+## hello_r 
+##
+## Simple condor job description file
+##
+########################################################
+
+executable = ./arima_example.R 
+transfer_input_files = arima_example.R
+universe = docker
+docker_image = r-base
+output = arima_example.out
+error =  arima_example.err
+log =    arima_example.log
+
+initialdir = run_1
+queue
+
+#initialdir = run_2
+#queue
+
+#initialdir = run_3
+#queue
+

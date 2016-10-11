@@ -1,0 +1,5 @@
+Job Initialize initialize.submit
+Job Product product.submit
+Job Collect collect.submit
+PARENT Initialize CHILD Product
+PARENT Product CHILD Collect
