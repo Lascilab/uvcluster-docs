@@ -14,19 +14,23 @@ Invitamos a los nuevos usuarios a revisar con especial atención el contenido so
  - ¿Por qué alguien usaría un cluster?
  - ¿Qué problemas podría resolver?
  - ¿Cual es la diferencia entre HPC vs HTC?
+
 ### Acceso
  - ¿Cómo realizar una solicitud las creedenciales de acceso?
  - Con las credenciales, ¿cómo se accede al cluster?
  - ¿Cómo enviar archivos? SFTP, SCP
+
 ### Definiciones
  - HTCondor
  - Docker
  - Ubuntu-Linux
  - SSH
  - Git
+
 ### Forma de trabajo
  - General
  - Excepciones
+
 ### Cheat Sheet - Cursos rápidos
  - Linux
  - Nano
@@ -34,6 +38,7 @@ Invitamos a los nuevos usuarios a revisar con especial atención el contenido so
  - HTCondor-Submitfiles
  - Docker
  - Git
+
 ### How To
  - ¿Cómo creo una imagen de docker? Dockerfile (R por paquetes, Matlab)
  - ¿Cómo creo una imagen de docker? Docker commit (R por paquetes)
@@ -41,9 +46,11 @@ Invitamos a los nuevos usuarios a revisar con especial atención el contenido so
  - ¿Cómo publico una imagen de docker? dockerhub git
  - ¿Cómo publico una imagen de docker? dockerhub, docker push
  - ¿Cómo hago una replica del cluster en mi computador?
+
 ### Debugging y problemas
  - El estado de mi trabajo es 'H'
  - Cómo reanudar un job
+
 ### Casos
  - Touch
  - Matlab
@@ -51,12 +58,16 @@ Invitamos a los nuevos usuarios a revisar con especial atención el contenido so
  - R
  - Mathematica
  - BLAST
+
 ### Herramientas
  - Pegasus
  - Dagman
  - Swift
+
 ### Otros
  - Interactivos
  
 ## Responsables
 [LASCILAB](http://lascilab.univalle.edu.co/)
+
+
