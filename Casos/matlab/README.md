@@ -1,11 +1,11 @@
 # Matlab, Htcondor y Docker
 
-Versiones | .
------------------
-HTCondor | 8.4
-Docker Engine | 1.12
-Ubuntu | 14.04
-MCR | {2012..2016}(a,b)
+|Software | Versiones|
+|-----------------|
+|HTCondor | 8.4|
+|Docker Engine | 1.12|
+|Ubuntu | 14.04|
+|MCR | {2012..2016}(a,b)|
 
 HTCondor está preparado para ejecutar un gran número de aplicaciones de matlab de manera concurrente en un cluster computacional. Si la aplicación contiene el mismo análisis para un conjunto de datos o ejecuta la misma computación para diferentes valores iniciales (como por ejemplo aplicaciones de los métodos de montecarlo), HTCondor puede reducir significativamente el tiempo necesario para obtener dichos resultados porque se encarga de agendar la ejecución del programa en diferentes hosts aprovechando los recursos.
 
@@ -21,19 +21,19 @@ Sus iniciales indican “MATLAB Compiler Runtime”, un conjunto independiente d
 
 Cada versión de Matlab trae consigo su respectiva MCR, como se muestra en la siguiente tabla:
 
-MCR | Matlab 
------------------
-R2016b | (Matlab 9.1)
-R2015a | (Matlab 8.5)
-R2013a | (Matlab 8.1)
-R2016a | (Matlab 9.0.1)
-R2014b | (Matlab 8.4)
-R2012b | (Matlab 8.0)
-R2015b | (Matlab 9.0)
-R2014a | (Matlab 8.3)
-R2012a | (Matlab 7.17)
-R2015aSP1 | (Matlab 8.5.1)
-R2013b | (Matlab 8.2)
+|MCR | Matlab |
+|-----------------|
+|R2016b | (Matlab 9.1)|
+|R2015a | (Matlab 8.5)|
+|R2013a | (Matlab 8.1)|
+|R2016a | (Matlab 9.0.1)|
+|R2014b | (Matlab 8.4)|
+|R2012b | (Matlab 8.0)|
+|R2015b | (Matlab 9.0)|
+|R2014a | (Matlab 8.3)|
+|R2012a | (Matlab 7.17)|
+|R2015aSP1 | (Matlab 8.5.1)|
+|R2013b | (Matlab 8.2)|
 
 La diferencia entre Matlab y MCR reside en varios puntos:
 
@@ -45,44 +45,41 @@ A lo largo de este documento se usará el archivo “mult.m” como ejemplo, est
 
 A grosso modo, una aplicación creada en Matlab para ejecutarse en HTCondor debe seguir los siguientes pasos:
 
-Compilar el código fuente de la aplicación
-Disponer de la imagen del MCR en el cluster
-Especificar en un submitfile el job que se desea ejecutar 
+ - Compilar el código fuente de la aplicación
+ - Disponer de la imagen del MCR en el cluster
+ - Especificar en un submitfile el job que se desea ejecutar 
 
 mult.m
+```
 function[] = mult
     A = [1 2;3 4]
     B = [5 6;7 8]
     C = A * B
     disp(C)
 end
-
+```
 ## ¿Cómo compilar una aplicación de Matlab?
 Existen dos formas de compilar el código fuente de un programa en Matlab, la primera y más simple consiste en utilizar la consola: basta con indicarle al compilador los archivos que constituyen la aplicación. Vale la pena recordar que solo este paso necesita una licencia válida del compilador de Matlab (No del MCR).
 
-$ mcc -m -R '-logfile,bar.txt,-nojvm,-nodisplay,-singleCompThread -v mult.m
+> $ mcc -m -R '-logfile,bar.txt,-nojvm,-nodisplay,-singleCompThread -v mult.m
 http://es.mathworks.com/help/compiler/mcc.html
 
 Cada argumento tiene su explicación
 
-Argumento
-Explicación
--nosplash
-Desabilita el splash screen.
--nodisplay
-Lanza la aplicación de Matlab sin funcionalidades de interfaces gráficas
--nojvm
-Deshabilita la máquina virtual de java(JVM™).
--singleCompThread
-Deshabilita el uso de mas de un core de CPU
--logfile
-Escribe información acerca del MCR en un logfile cuando se ejecuta la aplicación
+| Argumento | Explicación |
+|-------------------------|
+| -nosplash | Desabilita el splash screen.|
+| -nodisplay | Lanza la aplicación de Matlab sin funcionalidades de interfaces gráficas|
+| -nojvm | Deshabilita la máquina virtual de java(JVM™).|
+| -singleCompThread | Deshabilita el uso de mas de un core de CPU |
+| -logfile | Escribe información acerca del MCR en un logfile cuando se ejecuta la aplicación |
+|-------------------------|
 
 Si una aplicación de Matlab está constituida por varios archivos o bien, el archivo principal hace llamados a funciones almacenadas en otros archivos, sus directorios deberían ser indicados al compilador usando la opción ‘-a’
 
-La segunda forma de compilar una aplicación de Matlab puede llevarse a cabo dentro de la interfaz gráfica del IDE de Matlab, como se describe en la siguiente imagen:
+La segunda forma de compilar una aplicación de Matlab puede llevarse a cabo dentro de la interfaz gráfica del IDE de Matlab
 
-Menu > Apps > Application Compiler
+> Menu > Apps > Application Compiler
 
 Ambos métodos crean un archivo binario ejecutable de la aplicación y un script cuyo nombre tiene la forma run_<funcion>.sh el cual es un ejecutable de shell que asigna las variables de entorno y contiene el nombre del ejecutable.
 
@@ -155,15 +152,15 @@ queue 1
 ## Lista de ejemplos
 Este documento trae consigo una carpeta con ejemplos pueden ser ejecutados para mostrar un pequeño rango de funcionalidades provistas por el MCR usando HTCondor, a continuación describimos cada uno en una tabla:
 
-Nombre | Descripción 
-______________________
-bublP | Un programa de ingeniería química.
-hola  | Un script que imprime en consola ‘Hola Mundo’
-colorABN | Un script que lee un grupo de imágenes y las convierte a blanco y negro
-mult | Un script que multiplica dos matrices
-montecarlopi | Un script que calcula el número PI usando el método de monte-carlos
-dependencias | Un proyecto cuya función principal depende de dos funciones contenidas en archivos distintos
-dagman | Una aplicación que usa HTCondor Dagman
+| Nombre | Descripción  |
+| ______________________ |
+| bublP | Un programa de ingeniería química. |
+| hola  | Un script que imprime en consola ‘Hola Mundo’ |
+| colorABN | Un script que lee un grupo de imágenes y las convierte a blanco y negro |
+| mult | Un script que multiplica dos matrices |
+| montecarlopi | Un script que calcula el número PI usando el método de monte-carlos |
+| dependencias | Un proyecto cuya función principal depende de dos funciones contenidas en archivos distintos |
+| dagman | Una aplicación que usa HTCondor Dagman |
 
 ## Consideraciones
 ###Licencias y HTCondor
