@@ -37,9 +37,10 @@ Cada versión de Matlab trae consigo su respectiva MCR, como se muestra en la si
 
 La diferencia entre Matlab y MCR reside en varios puntos:
 
-El MRC convierte archivos de MATLAB en archivos binarios encriptados e “inmutables”.
-MATLAB posee una interfaz gráfica de usuario mientras que el MCR, a pesar que trae consigo todas las funcionalidades de MATLAB, carece de una interfaz gráfica. 
-El MCR es usado de acuerdo a la versión de Matlab, así que se deben ejecutar las aplicaciones con el MCR asociado a la versión de compilador usado. Por ejemplo, si la aplicación fue compilada usando la versión 6.3 (R2016b) del compilador de Matlab, los usuarios que quieran ejecutarla deben tener MATLAB o bien MCR version 9.1 instalado.
+ - El MRC convierte archivos de MATLAB en archivos binarios encriptados e “inmutables”.
+ - MATLAB posee una interfaz gráfica de usuario mientras que el MCR, a pesar que trae consigo todas las funcionalidades de MATLAB, carece de una interfaz gráfica. 
+ - El MCR es usado de acuerdo a la versión de Matlab, así que se deben ejecutar las aplicaciones con el MCR asociado a la versión de compilador usado. Por ejemplo, si la aplicación fue compilada usando la versión 6.3 (R2016b) del compilador de Matlab, los usuarios que quieran ejecutarla deben tener MATLAB o bien MCR version 9.1 instalado.
+ 
 ## Una aplicación como ejemplo
 A lo largo de este documento se usará el archivo “mult.m” como ejemplo, este describe la multiplicación de dos matrices cuadradas. Cabe resaltar que las aplicaciones de Matlab deben deben tener una función que coincida con el nombre del archivo, esta función será la función principal o de entrada, además, si la aplicación espera recibir parámetros de entrada, estos ingresan a la función principal como strings.
 
