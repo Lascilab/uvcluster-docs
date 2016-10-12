@@ -18,7 +18,7 @@ guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los
  - ¿Cual es la diferencia entre HPC vs HTC?
 
 ### [Acceso](Acceso/README.md)
- - ¿Cómo realizar una solicitud las creedenciales de acceso?
+ - ¿Cómo realizar una solicitud para obtener las creedenciales de acceso?
  - Con las credenciales, ¿cómo se accede al clúster?
  - ¿Cómo enviar archivos? SFTP, SCP
 
@@ -56,12 +56,12 @@ guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los
  - Cómo reanudar un job
 
 ### [Casos](Casos/README.md)
- - Touch
+ - Touch (Básico)
  - Matlab
  - Octave
  - R
  - Mathematica
- - BLAST
+ - Julia
 
 ### [Herramientas](Herramientas/README.md)
  - Dagman
@@ -73,7 +73,9 @@ guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los
 
 ### Notas
 Esta documentación puede ser seguida y generada en el clúster usando un [Lynx](http://lynx.browser.org/), [pandoc](http://pandoc.org/demos.html) y Makefile
-`make && lynx index.html`
+```
+make && lynx index.html
+```
 
 
 ## Responsables

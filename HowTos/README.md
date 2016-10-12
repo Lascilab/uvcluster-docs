@@ -39,7 +39,7 @@ condor_status -const HasDocker
 ``
 
 ### Ubuntu 14.04
-> Para Ubuntu 12.04 cambie la palabra trusty por ...
+> Para Ubuntu 12.04 cambie la palabra trusty por ‘precise’
 
 ```
 $ echo "deb [arch=amd64] http://research.cs.wisc.edu/htcondor/ubuntu/stable/ trusty contrib" | sudo tee -a /etc/apt/sources.list
