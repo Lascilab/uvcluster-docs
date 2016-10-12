@@ -1,0 +1,12 @@
+universe                = docker
+docker_image            = julia
+executable              = hola.jl
+# arguments             = 
+should_transfer_files   = YES
+transfer_input_files    = input.txt
+when_to_transfer_output = ON_EXIT
+output                  = out.$(Process)
+error                   = err.$(Process)
+log                     = log.$(Process)
+request_memory          = 10M
+queue 1

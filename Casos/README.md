@@ -1,13 +1,25 @@
 # Casos de uso
 A continuación se muestran algunos casos de uso de aplicaciones cientificas en el cluster
-## Touch
+Muchos de estos no son compresinsibles en su totalidad pero muestran las caracteristicas en común 
+de las formas de trabajo en el cluster. Si usted tiene un caso de uso que merece estar aquí, haganoslo saber porfavor. 
 
-## Matlab
+## [Touch](touch/README.md)
+Se trata del ejemplo mas simple de una aplicación que usa HTCondor y Docker. 
+Aplica ademas los conceptos de manejo de archivos en HTCondor
 
-## Octave
+## [Matlab](matlab/README.md)
+Contiene una gran cantidad de ejemplos que van desde imprimir en consola una cadena
+hasta cambiar de blanco a negro una carpeta de imagenes
 
-## R
+## [Octave](octave/README.md)
+Genera un fractal de maldelbrot
 
-## Mathematica
+## [R](r/README.md)
+Al igual que Matlab, tiene varios ejemplos
 
-## BLAST
+## [Mathematica](mathematica/README.md)
+> Falla
+Muestra un ejemplo de una aplicación que no usa Docker
+
+## [Julia](julia/README.md)
+> Para agregar

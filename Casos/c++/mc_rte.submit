@@ -11,4 +11,4 @@ output                  = $(Process).$(Cluster).out
 error                   = $(Process).$(Cluster).err
 log                     = $(Process).$(Cluster).log
 # request_memory          = 10M
-queue 7680
+queue 10
