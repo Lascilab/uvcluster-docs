@@ -12,11 +12,11 @@
 SOURCE_DOCS := $(shell find ./ -type f -name '*.md')
 
 EXPORTED_DOCS=\
- $(SOURCE_DOCS:.md=.html)# \
+  $(SOURCE_DOCS:.md=.html) \
+  $(SOURCE_DOCS:.md=.odt)
 # $(SOURCE_DOCS:.md=.pdf) \
 # $(SOURCE_DOCS:.md=.docx) \
 # $(SOURCE_DOCS:.md=.rtf) \
-# $(SOURCE_DOCS:.md=.odt) \
 # $(SOURCE_DOCS:.md=.epub)
 
 RM=/bin/rm
@@ -34,7 +34,7 @@ PANDOC_ODT_OPTIONS=
 PANDOC_EPUB_OPTIONS=--to epub3
 
 
-# Pattern-matching Rules
+# Pattern-matching Rules $(notdir ...)
 
 %.html : %.md
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_HTML_OPTIONS) -o $@ $<
