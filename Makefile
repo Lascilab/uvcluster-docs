@@ -57,9 +57,12 @@ PANDOC_EPUB_OPTIONS=--to epub3
 
 # Targets and dependencies
 
-.PHONY: all clean
+.PHONY: all clean lynx
 
 all : $(EXPORTED_DOCS)
 
 clean:
 	- $(RM) $(EXPORTED_DOCS)
+
+lynx:
+	- lynx README.html

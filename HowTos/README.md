@@ -55,9 +55,10 @@ $ sudo service docker restart
 $ sudo service condor restart
 ```
 
-### Debian
-
 ### Windows
 
 > Si se encuentra en Windows, le sugerimos crear una máquina virtual de Ubuntu o Centos
+
+## ¿Cómo puedo instalar un software en particular en el cluster?
+## Mis trabajos dependen entre sí, ¿cómo puedo organizarlos? Dagman, Swift, Pegasus
 

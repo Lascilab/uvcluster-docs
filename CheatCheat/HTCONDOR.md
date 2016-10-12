@@ -22,6 +22,13 @@ Mostramos una lista de los comandos mas útiles para usar HTCondor
 ## ¿Esta condor ejecutandose?
 `ps aux l grep condor_{master,schedd,collector,negotiator}`
 
+## Enviando un Dag
+
+ - `condor_userprio`: Muestra la prioridad para cada usuario. Un valor bajo significa una prioridad alta donde 0.5 es la mayor. Tambien se puede usar `condor_userprio -allusers`  Para ver la prioridad de todos los usaurios. se puede agregar las opciones de `-priority` y/o `-usage` para obtener información mas detallada.
+ - `condor_qedit`: Use este comando para modificar los atributos de un Job cuando se encuentre en la cola..
+ - `condor_submit_dag <dag_file>`: Envie un DAG a la cola.
+ - `condor_version`: Imprime la version de HTCondor. 
+
 ## Usando un alias
 
 En el ~/.bashrc

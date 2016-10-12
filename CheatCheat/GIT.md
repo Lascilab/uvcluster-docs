@@ -1,6 +1,11 @@
 #GIT (Usando GITHUB)
 
-Sugerimos este libro de [Git] (https://git-scm.com/book/en/v2), no obstante, resumimos en una guia simple...
+Sistema para el control de versiones 
+
+> Sugerimos este libro de [Git] (https://git-scm.com/book/en/v2), no obstante, resumimos en una guia simple...
+> Sugerimos este tutorial de [Git] (http://swc-osg-workshop.github.io/2014-12-15-UChicago/novice/git/01-backup.html)
+> Git no debe ser confundido con Github pero 
+
 
 ## Crear una cuenta en github
 Ve a la página oficial de [Github](https://github.com/)

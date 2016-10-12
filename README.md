@@ -48,6 +48,8 @@ guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los
  - ¿Cómo publico una imagen de docker? dockerhub git
  - ¿Cómo publico una imagen de docker? dockerhub, docker push
  - ¿Cómo hago una replica del clúster en mi computador?
+ - ¿Cómo puedo instalar un software en particular en el cluster?
+ - Mis trabajos dependen entre sí, ¿cómo puedo organizarlos? Dagman, Swift, Pegasus
 
 ### [Debugging y problemas](Problemas/README.md)
  - El estado de mi trabajo es 'H'
@@ -62,9 +64,9 @@ guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los
  - BLAST
 
 ### [Herramientas](Herramientas/README.md)
- - Pegasus
  - Dagman
  - Swift
+ - Pegasus
 
 ### [Otros](Otros/README.md)
  - Interactivos
