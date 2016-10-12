@@ -22,9 +22,9 @@ end
 
 open("input.txt","r") do f
     for line in eachline(f)
-        print(line, "=> ")
+        print(chomp(line), "=> ")
         i = try
-            parseroman(line)
+            parseroman(chomp(line))
         catch
             "Invalid"
         end
