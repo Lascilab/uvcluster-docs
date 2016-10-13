@@ -1,6 +1,6 @@
 #DOCKER
 
-> Tomado de [](https://github.com/wsargent/docker-cheat-sheet)
+> Tomado de [este repositorio](https://github.com/wsargent/docker-cheat-sheet)
 
 ## Instalación
 
@@ -128,55 +128,12 @@ docker export my_container > my_container.tar.gz
 
 ### Difference between loading a saved image and importing an exported container as an image ?
 
-Loading an image using the `load` command creates a new image including its history.  
-Importing a container as an image using the `import` command creates a new image excluding the history which results in a smaller image size compared to loading an image.
-
+Cargar una imagen usando el comando `load` crea una nueva imagen incluyendo su historial.
+Importar un contenedor como si fuera una imagen usando el comando `import` crea una nueva imagen excluyendo el historial resultando en una imagen con un peso menor.
 
 ## Layers
 
-The versioned filesystem in Docker is based on layers.  They're like [git commits or changesets for filesystems](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/).
-
-Note that if you're using [aufs](https://en.wikipedia.org/wiki/Aufs) as your filesystem, Docker does not always remove data volumes containers layers when you delete a container!  See [PR 8484](https://github.com/docker/docker/pull/8484) for more details.
-
-
-## Volumes
-
-Docker volumes are [free-floating filesystems](https://docs.docker.com/userguide/dockervolumes/).  They don't have to be connected to a particular container.  You should use volumes mounted from [data-only containers](https://medium.com/@ramangupta/why-docker-data-containers-are-good-589b3c6c749e) for portability.  
-
-### Lifecycle
-
-* [`docker volume create`](https://docs.docker.com/engine/reference/commandline/volume_create/)
-* [`docker volume rm`](https://docs.docker.com/engine/reference/commandline/volume_rm/)
-
-### Info
-
-* [`docker volume ls`](https://docs.docker.com/engine/reference/commandline/volume_ls/)
-* [`docker volume inspect`](https://docs.docker.com/engine/reference/commandline/volume_inspect/)
-
-Volumes are useful in situations where you can't use links (which are TCP/IP only).  For instance, if you need to have two docker instances communicate by leaving stuff on the filesystem.
-
-You can mount them in several docker containers at once, using `docker run --volumes-from`.
-
-Because volumes are isolated filesystems, they are often used to store state from computations between transient containers.  That is, you can have a stateless and transient container run from a recipe, blow it away, and then have a second instance of the transient container pick up from where the last one left off.
-
-See [advanced volumes](http://crosbymichael.com/advanced-docker-volumes.html) for more details.  Container42 is [also helpful](http://container42.com/2014/11/03/docker-indepth-volumes/).
-
-You can [map MacOS host directories as docker volumes](https://docs.docker.com/userguide/dockervolumes/#mount-a-host-directory-as-a-data-volume):
-
-```
-docker run -v /Users/wsargent/myapp/src:/src
-```
-
-You can also use remote NFS volumes if you're [feeling brave](https://docs.docker.com/engine/tutorials/dockervolumes/#/mount-a-shared-storage-volume-as-a-data-volume).
-
-You may also consider running data-only containers as described [here](http://container42.com/2013/12/16/persistent-volumes-with-docker-container-as-volume-pattern/) to provide some data portability.
-
-### User Namespaces
-
-There's also work on [user namespaces](https://s3hh.wordpress.com/2013/07/19/creating-and-using-containers-without-privilege/) -- it is in 1.10 but is not enabled by default.
-
-To enable user namespaces ("remap the userns") in Ubuntu 15.10, [follow the blog example](https://raesene.github.io/blog/2016/02/04/Docker-User-Namespaces/).
-
+El sistema de ficheros de una imagen o un contenedor esta basado en capas. Se asemejan a los [git commits](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/).
 
 ## Tips
 
@@ -184,7 +141,7 @@ Sources:
 
 * [15 Docker Tips in 5 minutes](http://sssslide.com/speakerdeck.com/bmorearty/15-docker-tips-in-5-minutes)
 
-### Last Ids
+### Ultimos Ids
 
 ```
 alias dl='docker ps -l -q'
@@ -192,117 +149,55 @@ docker run ubuntu echo hello world
 docker commit $(dl) helloworld
 ```
 
-### Get IP address
+### Obtener la dirección IP
 
 ```
 docker inspect $(dl) | grep IPAddress | cut -d '"' -f 4
 ```
-
-or install [jq](https://stedolan.github.io/jq/):
-
-```
-docker inspect $(dl) | jq -r '.[0].NetworkSettings.IPAddress'
-```
-
-or using a [go template](https://docs.docker.com/reference/commandline/inspect)
+o usando una plantilla de [go-lang](https://docs.docker.com/reference/commandline/inspect)
 
 ```
-docker inspect -f '{{ .NetworkSettings.IPAddress }}' <container_name>
+docker inspect -f '{{ .NetworkSettings.IPAddress }}' <nombre_del_contenedor>
 ```
 
-### Get port mapping
+### Obtener los puertos expuestos
 
 ```
-docker inspect -f '{{range $p, $conf := .NetworkSettings.Ports}} {{$p}} -> {{(index $conf 0).HostPort}} {{end}}' <containername>
+docker inspect -f '{{range $p, $conf := .NetworkSettings.Ports}} {{$p}} -> {{(index $conf 0).HostPort}} {{end}}' <nombre_del_contenedor>
 ```
 
-### Find containers by regular expression
+### Encontrar contenedores según una expresión regular
 
 ```
 for i in $(docker ps -a | grep "REGEXP_PATTERN" | cut -f1 -d" "); do echo $i; done
 ```
 
-### Get Environment Settings
+### Imprimir el ambiente de un contenenedor
 
 ```
 docker run --rm ubuntu env
 ```
 
-### Kill running containers
+### Eliminar todos los contenedores
 
 ```
 docker kill $(docker ps -q)
 ```
 
-### Delete old containers
+### Eliminar contenedores muy viejos
 
 ```
 docker ps -a | grep 'weeks ago' | awk '{print $1}' | xargs docker rm
 ```
 
-### Delete stopped containers
+### Eliminar contenedores detenidos
 
 ```
 docker rm -v $(docker ps -a -q -f status=exited)
 ```
 
-### Delete dangling images
-
-```
-docker rmi $(docker images -q -f dangling=true)
-```
-
-### Delete all images
+### Eliminar todas las imagenes
 
 ```
 docker rmi $(docker images -q)
-```
-
-### Slimming down Docker containers  [Intercity Blog](http://bit.ly/1Wwo61N)
-
-- Cleaning APT in a RUN layer
-This should be done in the same layer as other apt commands.
-Otherwise, the previous layers still persist the original information and your images will still be fat.
-```
-RUN {apt commands} \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-```
-- Flatten an image
-```
-ID=$(docker run -d image-name /bin/bash)
-docker export $ID | docker import – flat-image-name
-```
-
-- For backup
-```
-ID=$(docker run -d image-name /bin/bash)
-(docker export $ID | gzip -c > image.tgz)
-gzip -dc image.tgz | docker import - flat-image-name
-```
-
-### Monitor system resource utilization for running containers
-
-To check the CPU, memory, and network i/o usage of a single container, you can use:
-
-```
-docker stats <container>
-```
-
-For all containers listed by id:
-
-```
-docker stats $(docker ps -q)
-```
-
-For all containers listed by name:
-
-```
-docker stats $(docker ps --format '{{.Names}}')
-```
-
-For all containers listed by image:
-
-```
-docker ps -a -f ancestor=ubuntu
 ```

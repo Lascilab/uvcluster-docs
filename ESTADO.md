@@ -64,4 +64,5 @@
 # Ideas
  - Un programa que lea los Markdown y notifique sobre los links caídos
  - Un programa que reciba de Github un webhook y actualice la wiki
- - Conectar la Wiki con la terminal interactiva
+ - Conectar la Wiki con la terminal interactiva}
+ - Una gran parte de comandos deberian llevar consigo el output de su ejecución
