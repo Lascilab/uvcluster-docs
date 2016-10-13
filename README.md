@@ -54,6 +54,7 @@ Guias
  - :star: ¿Cómo creo una imagen de docker a partir de un contenedor?
  - :star: ¿Cómo envío mi imagen al repositorio del clúster?
  - :star: ¿Cómo publico una imagen de docker en dockerhub? dockerhub, docker push
+ - :star: Sin usar git ¿Cómo mantengo actualizada la misma carpeta en mi pc y en el cluster? 
  - :star: :star: ¿Cómo creo una imagen de docker usando un Dockerfile?
  - :star: :star: Mis trabajos dependen entre sí, ¿cómo puedo organizarlos? Dagman, Swift, Pegasus
  - :star: :star: :star: ¿Cómo publico automáticamente una imagen de docker en dockerhub?
