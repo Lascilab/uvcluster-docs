@@ -38,6 +38,11 @@ Sobre como pensamos que se podria usar el cluster
  - Orquestación de contenedores (Docker Swarm, K8s)
  - Excepciones
 
+### [Tutorial](Tutorial/README.md)
+> Siento que esta sección deberia tener un tutorial que, paso por paso, enseñe al lector sobre cómo usar el cluster.
+> Si bien es cierto que es la finalidad de las demas secciones, esta en particular merece reunir a la mayoria porque debe amigable y pedagógica
+> con los nuevos usuarios.
+
 ### [Casos](Casos/README.md)
 Ejemplos prácticos y útiles
  - Touch (Básico)
