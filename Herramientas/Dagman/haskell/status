@@ -3,7 +3,7 @@
   DagFiles = {
     "dagman.dag"
   };
-  Timestamp = 1473906907; /* "Wed Sep 14 21:35:07 2016" */
+  Timestamp = 1476460747; /* "Fri Oct 14 10:59:07 2016" */
   DagStatus = 5; /* "STATUS_DONE (success)" */
   NodesTotal = 3;
   NodesDone = 3;
@@ -45,6 +45,6 @@
 ]
 [
   Type = "StatusEnd";
-  EndTime = 1473906907; /* "Wed Sep 14 21:35:07 2016" */
+  EndTime = 1476460747; /* "Fri Oct 14 10:59:07 2016" */
   NextUpdate = 0; /* "none" */
 ]

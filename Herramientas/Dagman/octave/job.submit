@@ -1,7 +1,9 @@
-executable = /usr/bin/octave
-#executable = octave
-arguments = mandelbrot.m $(cluster) $(process)
 universe = vanilla
+# universe = docker
+# docker_image = schickling/octave
+#executable = octave
+executable = /usr/bin/octave
+arguments = mandelbrot.m $(cluster) $(process)
 should_transfer_files   = YES
 transfer_input_files    = pngs, mandelbrot.m
 transfer_output_files   = pngs

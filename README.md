@@ -99,3 +99,4 @@ make && lynx index.html
 ## Responsables
 [LASCILAB](http://lascilab.univalle.edu.co/)
 > Invitamos a los responsables a revisar el progreso de cada documento [aquí](ESTADO.md)
+> IMPORTANTE: Fomentemos el uso de versiones en las imagenes de docker, eso ahorra ancho de banda (ubuntu:latest != ubuntu:14.04)

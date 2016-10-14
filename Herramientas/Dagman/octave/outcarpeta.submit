@@ -1,4 +1,6 @@
 executable = /bin/mkdir
+# universe = docker
+# docker_image = schickling/octave
 arguments = -p /tmp/pngs
 universe = vanilla
 should_transfer_files   = YES
