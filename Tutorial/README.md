@@ -14,6 +14,8 @@ Abres un editor de texto y unos pocos minutos después escribes un script como e
 
 ```
 carlos@carlos-desktop:~/p $ nano contador.py
+```
+```python
 # -*- coding: utf-8 -*-
 #!/usr/bin/python
 import sys
@@ -31,8 +33,10 @@ for palabra,frecuencia in diccionarioFrec.items():
 
 Luego descargas el libro en tu computador (o si eres un poco mas intrépido lo escaneas)
 
-```
+```bash
 carlos@carlos-desktop:~/p $ wget http://www.gutenberg.org/cache/epub/7849/pg7849.txt
+```
+```bash
 --2016-10-13 13:03:09--  http://www.gutenberg.org/cache/epub/7849/pg7849.txt
 Resolviendo www.gutenberg.org (www.gutenberg.org)... 152.19.134.47, 2610:28:3090:3000:0:bad:cafe:47
 Conectando con www.gutenberg.org (www.gutenberg.org)[152.19.134.47]:80... conectado.
@@ -47,8 +51,10 @@ Grabando a: “pg7849.txt”
 
 Y en cuestión de milisegundos obtienes la frecuencia de las palabras.
 
-```
+```bash
 carlos@carlos-desktop:~/p $ python contador.py pg7849.txt
+```
+```bash
 ....
 coats,1
 mutual,1
@@ -81,14 +87,14 @@ Después de leer otros libros, tus amigos te han pedido que halles la frecuencia
 
 > A partir de ahora asumimos que el usuario en el cluster es ‘carlosc’ y la ip del cluster 45.68.55.22. La contraseña es ‘secreta’
 
-```
+```bash
 carlos@carlos-desktop:~/p $ ssh carlosc@45.68.55.22
 carlosc@carlosc-cluster:~   $ exit              # para salir
 ```
 
 Copias la carpeta y los archivos en los que estas trabajando (¿deberiamos fomentar el uso de git?) [acceso, ssh] desde tu computador al cluster usando un program llamado scp.
 
-```
+```bash
 carlos@carlos-desktop:~/p $ scp -r . carlosc@45.68.55.22:~
 pg7849.txt                                            100%  470KB 469.8KB/s   00:00    
 contador.py                                           100%  245     0.2KB/s       00:00
@@ -96,7 +102,7 @@ contador.py                                           100%  245     0.2KB/s     
 
 Aun afuera, sabes que puedes volver a entrar, moverte por el lugar y ver el contenido de cada carpeta usando `ls` [Curso de Linux]()
 
-```
+```bash
 carlos@carlos-desktop:~/p $ ssh carlosc@45.68.55.22
 carlosc@carlosc-cluster:~  $ ls
   pg7849.txt contador.py
@@ -110,7 +116,7 @@ La solución que salta a la vista para resolver el problema consiste instalar py
 
 Puedes por ejemplo ver qué tareas están ejecutando otros usuarios que siguieron al pie de la letra este tutorial:
 
-```
+```bash
 carlosc@carlosc-cluster:~ $ condor_q
 ```
 
@@ -140,7 +146,7 @@ queue 1
 Nuestro sabor favorito de helado es la vainilla, por lo tanto queremos un universo ideal.  
 Enviamos a la cola
 
-```
+```bash
 carlos@carlos-desktop:~/p $ condor_submit contador.submitfile
 Submitting job(s).
 1 job(s) submitted to cluster 23.
@@ -148,7 +154,7 @@ Submitting job(s).
 
 Revisamos la cola de tareas
 
-```
+```bash
 carlos@carlos-desktop:~/p$ condor_q
 -- Schedd: carlos-desktop : <192.168.1.10:63014?...
  ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD               
