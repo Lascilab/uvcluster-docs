@@ -54,10 +54,25 @@ HPC es una sigla que se deriva del termino *High Performance Computing*.
 HPC se usa para denotar o plataformas o tipos de ambientes donde lo mas importante es reducir los tiempos de ejecución de las aplicaciones. 
 El tipo de infraestructuras computacionales que son adecuadas para este tipo de objetivo son aquellas que se caracterizan por la homogeneidad de los equipos de cómputo tanto en su hardware como en su software.
 * **¿Qué tipo de problemas o aplicaciones puedo ejecutar el *cluster* que ustedes gestionan?** 
-En este tipo de *cluster* se pueden ejecutar tareas que se conocen como *bag of tasks* o *parameter sweep applications*.
-***Bag of tasks*** o bolsa de tareas es un tipo especial de aplicación que se caracteriza por la diversidad de tipos de tareas que requiere la ejecución de este tipo de aplicación. Suponga una aplicación que requiere ejecutar una tarea con múltiples hilos de ejecución, luego ejecutar una tarea distribuida, luego una tarea intensiva en cómputo, etc. 
-Es decir, este tipo de aplicaciones se caracteriza por la heterogeneidad del tipo de tareas que requiere para lograr su ejecución.
-***Parameter sweep applications*** o aplicaciones de barrido de parámetros son aplicaciones en las cuales se requiere ejecutar una sola aplicación pero muchas veces con diferentes parámetros de entrada. 
-Ejemplo de este tipo de aplicaciones son las aplicaciones que usan heurísticas y las cuales se caracterizan por tener resultados no deterministas y por este razón se requiere ejecutar la misma aplicación varias veces con diferentes parámetros para determinar comportamientos o tendencias.
+En este tipo de *cluster* se pueden ejecutar **aplicaciones desatendidas** del tipo 
+  * *Bag of tasks* 
+  * *Parameter sweep applications* 
+  * *Embarrassingly parallel applications*
+* **¿Qué son aplicaciones desatendidas?**
+Son aplicaciones **desatendidas** aquellas que para poder correr no necesitan de la interacción del usuario para su correcta ejecución. 
+Ejemplo de aplicaciones que **si** requieren atención son: Matlab con su entorno gráfico, un procesador de palabras, un navegador. 
+Todas estas aplicaciones se caracterizan por requerir **atención** del usuario para lograr hacer su trabajo.
+Las aplicaciones desatendidas por otro lado requieren todos los datos de entrada al momento de comenzar su ejecución al pasárseles esos datos como argumentos de la aplicación. 
+* **¿Qué son aplicaciones del tipo bag of tasks**? 
+*Bag of tasks* o bolsa de tareas es un tipo de aplicación que se caracteriza por la diversidad de tipos de tareas que requiere la ejecución de este tipo de aplicación. 
+Suponga una aplicación que requiere ejecutar varias tareas, por ejemplo una tarea con múltiples hilos de ejecución, luego ejecutar una tarea de naturaleza distribuida, luego una tarea intensiva en cómputo, etc. 
+Es decir, estas aplicaciones se caracterizan por la heterogeneidad del tipo de tareas que requiere para lograr su ejecución.
+* **¿Qué son parameter sweep applications**? 
+*Parameter sweep applications* o aplicaciones de barrido de parámetros son aplicaciones en las cuales se requiere ejecutar una sola aplicación muchas veces con diferentes parámetros de entrada. 
+* **¿Qué son embarrassingly parallel applications?**
+*Embarrassingly parallel applications* son aplicaciones que se pueden particionar en un número arbitrario de subtareas. 
+Ejemplo de un aplicación de este tipo, es la de hacer búsquedas en una base de datos por el valor mas alto en un campo de un tabla. 
+Una posibilidad es la de correr la aplicación una sola vez sobre toda la base de datos de forma lineal y encontrar el máximo. 
+Otra posibilidad es ejecutar varias instancias de la aplicación sobre diferentes partes de la base de datos y que al final se consolide, a partir de los resultados parciales de cada una de las instancias, y determinar entonces el máximo de toda la base de datos.
 * **¿Con quién me pongo en contacto para resolver dudas?**
 Para contactarnos hágalo a través del correo electrónico del laboratorio [Lascilab](mailto:laboratorio.redesysd@correounivalle.edu.co ).
