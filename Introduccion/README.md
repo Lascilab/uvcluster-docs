@@ -15,7 +15,9 @@ El laboratorio esta bajo la dirección del profesor John Sanabria quien cuenta c
 | Aurelio Vivas | Est. ingeniería de Sistemas | Programación en paralelo |
 | Edier Zapata | Est. maestría | HTC |
 
-## ¿Con qué infraestructura contamos?
+Para contactarnos enviar un correo a [Lascilab](mailto:laboratorio.redesysd@correounivalle.edu.co ).
+
+## ¿Con qué infraestructura se cuenta?
 
 El laboratorio cuenta fundamentalmente con dos espacios para llevar a cabo procesos relacionados con la docencia y la investigación. 
 A nivel de docencia se tiene el espacio 2072 en el edificio 331 de la Facultad de Ingeniería. 
@@ -34,7 +36,7 @@ Contamos con un total de 320 *cores* y 768 GB de RAM. Adicionalmente, esta infra
 La utilización de estos equipos se hace a través de un sistema de manejo de cola de tareas llamado HTCondor. 
 Este sistema se caracteriza por gestionar la ejecución de tareas de diversa naturaleza sobre ambientes heterogéneos de computación basado en políticas oportunistas de asignación de recursos.
 
-## ¿Dudas respecto a lo que ha leído al momento?
+## Posibles Dudas respecto a lo que ha leído al momento
 A continuación se dan algunas definiciones respecto a dudas que pueda tener respecto al texto que ha leído.
 
 * **¿Qué es un cluster?**
@@ -74,5 +76,5 @@ Es decir, estas aplicaciones se caracterizan por la heterogeneidad del tipo de t
 Ejemplo de un aplicación de este tipo, es la de hacer búsquedas en una base de datos por el valor mas alto en un campo de un tabla. 
 Una posibilidad es la de correr la aplicación una sola vez sobre toda la base de datos de forma lineal y encontrar el máximo. 
 Otra posibilidad es ejecutar varias instancias de la aplicación sobre diferentes partes de la base de datos y que al final se consolide, a partir de los resultados parciales de cada una de las instancias, y determinar entonces el máximo de toda la base de datos.
-* **¿Con quién me pongo en contacto para resolver dudas?**
+* **¿Con quién me pongo en contacto para resolver dudas adicionales?**
 Para contactarnos hágalo a través del correo electrónico del laboratorio [Lascilab](mailto:laboratorio.redesysd@correounivalle.edu.co ).
