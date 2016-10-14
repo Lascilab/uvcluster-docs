@@ -1,6 +1,6 @@
 ## ¿Quienes somos?
 *LaScILab* es un laboratorio adscrito a la Escuela de Ingenieria de Sistemas y Computacion (EISC) de la Facultad de Ingenieria de la Universidad del Valle. 
-*LaScILab* se deriva del término en inglés ***La**rge **Sc**ale **I**nfrastructure **Lab**oratory* pues el objetivo del laboratorio es trabajar en términos relacionados a infraestructuras computacionales distribuidas a gran escala. 
+*LaScILab* se deriva del término en inglés **La**rge **Sc**ale **I**nfrastructure **Lab**oratory pues el objetivo del laboratorio es trabajar en términos relacionados a infraestructuras computacionales distribuidas a gran escala. 
 
 Es así como en este laboratorio se trabaja en áreas del conocimiento relacionadas a los sistemas operativos, herramientas de virtualización, orquestación de servicios y plataformas computacionales tipo HTC (*high throughput computing*) y HPC (*high performance computing*).
 Dado que el término *LaScILab* puede sonar complejo y demasiado alejado del quehacer de la gente de informática, al interior de la EISC se le conoce también como el **Laboratorio de Redes**.
