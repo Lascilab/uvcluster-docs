@@ -1,4 +1,7 @@
 # sudo apt-get install imagemagick
+# universe = docker
+# docker_image = jujhars13/docker-imagemagick
+# executable = convert
 executable = /usr/bin/convert
 arguments = -delay 10 -loop 0 pngs/*png output.gif
 universe = vanilla

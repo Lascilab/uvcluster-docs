@@ -24,7 +24,7 @@ $ sudo service condor restart
 ps -ef | grep condor
 condor_reconfig
 condor_status -const HasDocker
-``
+```
 
 ## Ubuntu 14.04
 > Para Ubuntu 12.04 cambie la palabra trusty por ‘precise’

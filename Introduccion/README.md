@@ -35,7 +35,7 @@ La utilización de estos equipos se hace a través de un sistema de manejo de co
 Este sistema se caracteriza por gestionar la ejecución de tareas de diversa naturaleza sobre ambientes heterogéneos de computación basado en políticas oportunistas de asignación de recursos.
 
 ## ¿Dudas respecto a lo que ha leído al momento?
-A continuación se dan algunos enlaces respecto a dudas que pueda tener respecto al texto que ha leído.
+A continuación se dan algunas definiciones respecto a dudas que pueda tener respecto al texto que ha leído.
 
 * **¿Qué es un cluster?**
 Un *cluster* es un tipo de infraestructura computacional donde varios nodos autónomos (a.k.a. computadores) se integran para tratar de resolver problemas de forma conjunta. 
@@ -59,8 +59,5 @@ En este tipo de *cluster* se pueden ejecutar tareas que se conocen como *bag of 
 Es decir, este tipo de aplicaciones se caracteriza por la heterogeneidad del tipo de tareas que requiere para lograr su ejecución.
 ***Parameter sweep applications*** o aplicaciones de barrido de parámetros son aplicaciones en las cuales se requiere ejecutar una sola aplicación pero muchas veces con diferentes parámetros de entrada. 
 Ejemplo de este tipo de aplicaciones son las aplicaciones que usan heurísticas y las cuales se caracterizan por tener resultados no deterministas y por este razón se requiere ejecutar la misma aplicación varias veces con diferentes parámetros para determinar comportamientos o tendencias.
-
 * **¿Con quién me pongo en contacto para resolver dudas?**
 Para contactarnos hágalo a través del correo electrónico del laboratorio [Lascilab](mailto:laboratorio.redesysd@correounivalle.edu.co ).
-
-

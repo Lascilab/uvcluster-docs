@@ -1,6 +1,5 @@
 # Estado de la documentación
 
-
 ## [Introducción](Introduccion/README.md)
  - [ ] ¿Qué es un cluster?
  - [ ] ¿Con qué contamos?
