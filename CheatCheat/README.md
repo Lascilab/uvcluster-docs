@@ -3,7 +3,7 @@
 ## Linux
 [Ver](http://swcarpentry.github.io/shell-novice/)
 y
-[Ver](http://swcarpentry.github.io/shell-novice/)
+[Ver](http://www.ee.surrey.ac.uk/Teaching/Unix/index.html)
 
 ## Nano
 

@@ -1,0 +1,10 @@
+universe                = vanilla
+executable              = /usr/bin/python
+arguments               = contador.py pg7849.txt
+should_transfer_files   = YES
+transfer_input_files    = contador.py, pg7849.txt
+when_to_transfer_output = ON_EXIT
+output                  = out/trial.csv
+error                   = err.$(Process)
+log                     = log.$(Process)
+queue 1

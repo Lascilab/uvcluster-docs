@@ -114,6 +114,8 @@ Ya en el cluster, te preguntas: [y ahora ¿qué hago?](Forma de trabajo)
 #El administrador del cluster
 La solución que salta a la vista para resolver el problema consiste instalar python junto con el  programa que has desarrollado y un conjunto de libros en cada uno de los computadores del cluster, Luego ejecutarlos y recolectar los resultados, pero siendo sinceros esto tomaría mucho tiempo. Por fortuna en el cluster contamos con un manejador de tareas que se encarga de distribuir tu programa y un conjunto de libros a todos los computadores. Tal programa es llamado [HTCondor](...).
 
+http://www.arc.ox.ac.uk/content/torque-job-scheduler
+
 Puedes por ejemplo ver qué tareas están ejecutando otros usuarios que siguieron al pie de la letra este tutorial:
 
 ```bash
@@ -123,7 +125,10 @@ carlosc@carlosc-cluster:~ $ condor_q
 > A veces es un poco molesto trabajar en el cluster, por eso sugerimos hacer una pequeña réplica del mismo para llevar a cabo algunas pruebas. (como-replicar-el-ambiente-de-trabajo.md)
 
 Para que HTCondor lleve a cabo nuestra tarea, debemos describir en un archivo el tipo de tarea que vamos a ejecutar, el ejecutable de la tarea, los archivos de entrada y salida y, no obstante, donde debe él guardar tanto el output, el error y el log. 
-Los tres mosqueteros: output, error y log
+
+
+##Los tres mosqueteros: output, error y log
+
 Interactuar con un programa en una consola es en muchos casos similar a hacerlo con una persona a través de tres canales establecidos: si esa persona te hace una pregunta (output o out) usa el primer canal para hacertela llegar. Pero ya que no se trata de una pregunta retórica, la respuesta se la haces llegar por otro canal (Input o in). Si esa persona se encuentra herida y no puede hablar, lo mas seguro es que manifieste su vulnerabilidad a través de señas o heridas (el canal de error o err). Estos tres se constituyen como los flujos estándar para la comunicación entre un programa de computador y su ambiente. Comúnmente ese ambiente es una consola en la que input corresponde a la entrada y output y error a la salida. |Mejorar esto| 
 
 Emocionado por esta posibilidad, vamos entonces a describir el programa en un [‘submitfile’](HTCondor-Submitfiles): 
@@ -138,8 +143,8 @@ should_transfer_files   = YES
 transfer_input_files    = contador.py, pg7849.txt
 when_to_transfer_output = ON_EXIT
 output                  = out/out.$(Process)
-error                     = err.$(Process)
-log                               = log.$(Process)
+error                   = err.$(Process)
+log                     = log.$(Process)
 queue 1
 ```
 
@@ -152,21 +157,19 @@ Submitting job(s).
 1 job(s) submitted to cluster 23.
 ```
 
-Revisamos la cola de tareas
+Monitoreamos su ejecución revisando la cola de tareas
 
 ```bash
 carlos@carlos-desktop:~/p$ condor_q
 -- Schedd: carlos-desktop : <192.168.1.10:63014?...
  ID      OWNER            SUBMITTED     RUN_TIME ST PRI SIZE CMD               
-………………………….
   23.0   carlos         10/14 08:23   0+00:00:00 I  0   3.4  python contador.py
-………………………….
 1 jobs; 0 completed, 0 removed, 1 idle, 0 running, 0 held, 0 suspended
 ```
 
->> Les mentí, dije que procesariamos un gran número de libros pero solo lo hicimos para uno. Aquí esta el cambio solución:
+> Les mentí, dije que procesariamos un gran número de libros pero solo lo hicimos para uno. Aquí esta el cambio solución:
 
-```
+```bash
 carlosc@carlosc-cluster:~ $ cat verdadero.submit
 universe                = vanilla
 executable              = python
@@ -180,4 +183,20 @@ log                     = log.$(Process)
 
 queue libro matching files ./*.txt
 ```
+
+   --------------
+   |   Frec.py  | 
+   | libro1.txt |
+   |  out/out1  |
+   --------------
+  /              \      ---------------
+ /                \     |  Ploter.R   |
+o       * * *      -----|    out/     |
+ \                /     | grafico.png |
+  \              /      ---------------
+   --------------
+   |   Frec.py  | 
+   | libroN.txt |
+   |  out/out1  |
+   --------------
 

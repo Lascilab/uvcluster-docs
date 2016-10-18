@@ -1,0 +1,5 @@
+Job Descargar descargar.submit
+Job Contador contador.submit
+Job Plotter r_plotter.submit
+PARENT Descargar CHILD Contador
+PARENT Contador CHILD Plotter

@@ -1,0 +1,11 @@
+universe                = docker
+docker_image            = tutum/curl
+executable              = curl
+transfer_executable     = false
+arguments               = $(urlLibro)
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+output                  = out/out.$(Process).txt
+error                   = err.$(Process)
+log                     = log.$(Process)
+queue urlLibro from urlLibros.txt

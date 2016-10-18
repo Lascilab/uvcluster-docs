@@ -1,0 +1,12 @@
+universe                = docker
+docker_image            = python:2-alpine
+executable              = python
+transfer_executable     = false
+arguments               = contador.py $BASENAME(libro)
+should_transfer_files   = YES
+transfer_input_files    = contador.py, $(libro)
+when_to_transfer_output = ON_EXIT
+output                  = out/$(Process).csv
+error                   = err.$(Process)
+log                     = log.$(Process)
+queue libro matching files ./out/*.txt

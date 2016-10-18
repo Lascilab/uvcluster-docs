@@ -17,4 +17,6 @@ a la siguiente dirección laboratorio.redesysd@correounivalle.edu.co, manifestan
 El encargado revisará su solicitud y responderá con la mayor brevedad posible.
 
 ## [Con las credenciales, ¿cómo se accede al cluster?](SSH.md)
-## [¿Cómo enviar archivos? SFTP, SCP](SCP-FTP.md)
+## [¿Cómo enviar archivos?](SCP-FTP.md)
+
+

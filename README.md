@@ -11,12 +11,8 @@ guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los
 ### [Introducción](Introduccion/README.md)
 Sobre las cuestiones administraticas del cluster.
  - ¿Quienes somos?
- - ¿Qué es un clúster?
- - ¿Con qué contamos?
- - ¿Cómo obtener ayuda?
- - ¿Por qué alguien usaría un clúster?
- - ¿Qué problemas podría resolver?
- - ¿Cual es la diferencia entre HPC vs HTC?
+ - ¿Con qué infraestructura contamos?
+ - ¿Tiene dudas al respecto de lo que ha leído al momento?
 
 ### [Acceso](Acceso/README.md)
 Sobre el acceso al cluster y sus recursos
