@@ -295,20 +295,83 @@ Luego vemos como la imagen aparece en la carpeta
 
 La importamos a nuestro pc… y la vemos
 
+## La desgracia
+La desgracia nos persigue… incluimos un error… no le indicamos a condor la carpeta de entrada (ver el comentario)
+
 ```
-   --------------
-   |   Frec.py  | 
-   | libro1.txt |
-   |  out/out1  |
-   --------------
-  /              \      ---------------
- /                \     |  Ploter.R   |
-o       * * *      -----|    out/     |
- \                /     | grafico.png |
-  \              /      ---------------
-   --------------
-   |   Frec.py  | 
-   | libroN.txt |
-   |  out/out1  |
-   --------------
+carlosc@carlosc-cluster:~ $ cat contador.submitfile
+universe                     = docker
+docker_image                 = r-base
+executable                   = r_plotter.R
+should_transfer_files        = YES
+# transfer_input_files         = out
+transfer_output_files         = grafico.png
+when_to_transfer_output = ON_EXIT
+output                       = out.$(Process)
+error                                    = err.$(Process)
+log                                      = log.$(Process)
+queue 1
 ```
+
+verificamos por qué…
+```
+carlosc@carlosc-cluster:~ $ condor_q
+```
+
+Analizamos qué sucedió
+
+```
+carlosc@carlosc-cluster:~ $ cat out
+```
+
+
+Lo volvemos a ejecutar
+
+```
+carlosc@carlosc-cluster:~ $ condor_release <job>
+```
+
+> Habrán casos donde es imposible reanudar el trabajo. Ver [problemas]()
+
+## El gestor de dependencias
+> Este paso es opcional pero sumamente útil
+
+```
+$ cat dagman.dag
+Job Contador contador.submit
+Job Plotter r_plotter.submit
+PARENT Contador CHILD Plotter
+```
+Que se traduce en...
+```
+               --------------
+               |   Frec.py  | 
+               | libro1.txt |
+               |  out/out1  |
+               --------------
+              /       *       \
+             /                 \
+--------------        *          ---------------
+| descargar  |                   |  Ploter.R   |
+|    URL     |      N-sima       |    out/     |
+|out/url.txt |                   | grafico.png |
+--------------        *          ---------------
+             \                 /
+              \       *       /
+               --------------
+               |   Frec.py  | 
+               | libroN.txt |
+               |  out/out1  |
+               --------------
+```
+
+> Si quieres hacer tu propia imagen de docker…
+> Reto: Hallar la forma en python de convertir un libro de pdf a txt
+Dagman, esta y otras [Herramientas]()
+
+# La gloria
+Si consideras que tu caso es reproducible, envíanos un tutorial como este o mejor. Publica con nosotros
+
+# Los demás
+Puedes ver otros casos como este en: [casos]()
+
