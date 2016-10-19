@@ -184,6 +184,118 @@ log                     = log.$(Process)
 queue libro matching files ./*.txt
 ```
 
+## El contenedor
+
+Después de haber contando todas y cada una de las palabras de cada libro, queremos ahora hallar la frecuencia de una palabra en el grupo, así, si buscamos la palabra "love", podríamos darnos cuenta que tres de los doscientos libros la incluyen 54, 37 y 22 veces respectivamente.
+
+Optamos por usar R para reunir los resultados en un gráfico. Afirmamos con vehemencia “ya que python está en el cluster, R también debe estar” pero la verdad es que no lo está, debemos ‘instalarlo’ por nuestra cuenta. [ver cómo instalar software]().
+
+Usaremos docker… es como si descargaras el instalador para tu programa… puedes buscar en dockerhub...
+
+Descargamos el contenedor oficial para R en nuestro computador
+
+```
+carlos@carlos-desktop:~/p $ docker pull r-base
+```
+
+Empezamos a jugar con él situándonos en la carpeta del proyecto de nuestro computador
+
+```
+carlos@carlos-desktop:~/p $ docker run -it --rm -v $(pwd):/tmp r-base /bin/bash
+root@faef3835d59c:/          # cd /tmp
+root@faef3835d59c:/tmp    # ls
+   contador.py  contador.submitfile  err.0  log.0    out  pg7849.txt
+```
+Creamos un pequeño programa que imprime hola mundo
+```
+root@faef3835d59c:/tmp# echo 'print ("Hola Mundo")' > hola.R
+root@faef3835d59c:/tmp# Rscript hola.R
+ [1] "Hola Mundo"
+```
+> Nos salimos haciendo “Ctrl p+q” (si, presiona control control junto con p y q)
+> Podes ver los cambios en la carpeta
+
+Ahora que nos sentimos cómodos con el contenedor, vamos a ordenar y graficar las palabras mas frecuentes entre todos los libros. Abrimos nuestro editor de confianza (R-Studio o nano)
+
+```
+rooot@kkk:/ # nano r_plotter.R
+# Recibe el directorio donde se encuentran los archivos
+# y la palabra a buscar
+uvsearch = function(directorio, palabra){
+   # Saca una lista archivos presentes en el directorio
+   libros = list.files(path=directorio, full.names=TRUE,pattern="*.csv")
+   Reduce(function(resultados,libro){
+     # Lee cada archivo como un csv, cuya primera columna es palabra seguida de frecuencia
+     frecuencias = read.csv(file=libro, header=FALSE, stringsAsFactors = FALSE, quote = "", col.names=c("palabra","frecuencia"), encoding="UTF-8")
+     # Busca la posicion de palabra en el dataframe de frecuencias
+     linea = which(frecuencias$palabra == palabra)
+     # Si la encontro...
+     if(length(linea) > 0 && linea > 0){
+       # Agregua el nombre del libro + frecuencia
+       #resultados<- c(resultados, libro, strtoi(frecuencias[linea,]$frecuencia))
+       resultados <- rbind(resultados, data.frame(libro=libro, frecuencia=strtoi(frecuencias[linea,]$frecuencia)))
+     }
+   }, libros, data.frame(libro=list(), frecuencia=list()))
+}
+poseedores <- uvsearch("out","love")
+poseedores <- poseedores[order(poseedores$frecuencia, decreasing=FALSE),]
+poseedores <- poseedores[seq(from=1, to=min(5, length(poseedores)+1), by=1),]
+if(!is.null(poseedores) && row(poseedores) > 0){
+  png('grafico.png')
+  plot(poseedores, type = "h")
+  dev.off()
+}
+```
+
+Lo probamos con pocos datos para comprobar que no tiene errores de sintaxis o quizás semánticos:
+
+> Debes tener la carpeta ‘out’ generada en le punto anterior
+
+```
+root@faef3835d59c:/tmp $ ls
+   contador.py  contador.submitfile  out  pg7849.txt r_plotter.R
+...:/ $ Rscript r_plotter.R
+```
+
+Y ya podemos ver esa hermosa gráfica. Como es costumbre, (Ahora estamos en el cluster), vamos a crear un submitfile para automatizar este proceso:
+
+```
+carlosc@carlosc-cluster:~ $ cat r_plotter.submitfile
+universe                          = docker
+docker_image                      = r-base
+executable                        = Rscript
+transfer_executable          = false
+arguments                         = r_plotter.R
+should_transfer_files        = YES
+transfer_input_files                = out, r_plotter.R
+transfer_output_files           = grafico.png
+when_to_transfer_output   = ON_EXIT
+output                              = out.$(Process)
+error                               = err.$(Process)
+log                                 = log.$(Process)
+queue 1
+```
+
+HTCondor… Docker (curso rápido)
+Lo enviamos para que ejecute...
+
+```
+carlosc@carlosc-cluster:~ $ condor_submit contador.submitfile
+```
+
+Podemos ver si efectivamente descargó
+
+```
+carlosc@carlosc-cluster:~ $ condor_q # constrain para verlo
+```
+
+El estado de la tarea es I… luego R… depronto desaparece
+
+Luego vemos como la imagen aparece en la carpeta
+
+La importamos a nuestro pc… y la vemos
+
+```
    --------------
    |   Frec.py  | 
    | libro1.txt |
@@ -199,4 +311,4 @@ o       * * *      -----|    out/     |
    | libroN.txt |
    |  out/out1  |
    --------------
-
+```

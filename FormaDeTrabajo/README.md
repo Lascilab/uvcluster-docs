@@ -8,6 +8,7 @@ Este flujo de trabajo se vuelve impráctico a la hora de aplicarse en cluster co
 Esta herramienta altera la forma ligeramente la forma de trabajo inicial. Dicha modificación consiste en crear, usar o editar una imagen en la que se encuentren instaladas las herramientas, librerías y paquetes necesarios para la ejecución de la aplicación. Adicionalmente, ya que las aplicaciones no pueden ser atendidas por el usuario ya que se demoran mucho o son muchas, se le delega esta tarea a un gestor de tareas llamado HTCondor.
 
 > Justificación: http://nucleotid.es/
+> Paper justificación: https://arxiv.org/pdf/1410.0846.pdf
 
 # Docker Swarm o K8s
 Es posible que HTCondor no sea una opción adecuada para la solución de su problema por lo que tambien contamos con otra opción llamada [Docker Swarm](https://docs.docker.com/swarm/).

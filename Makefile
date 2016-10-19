@@ -13,7 +13,7 @@ SOURCE_DOCS := $(shell find ./ -type f -name '*.md')
 
 EXPORTED_DOCS=\
   $(SOURCE_DOCS:.md=.html) \
-  $(SOURCE_DOCS:.md=.odt)
+#  $(SOURCE_DOCS:.md=.odt)
 # $(SOURCE_DOCS:.md=.pdf) \
 # $(SOURCE_DOCS:.md=.docx) \
 # $(SOURCE_DOCS:.md=.rtf) \
