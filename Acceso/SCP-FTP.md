@@ -41,7 +41,8 @@ Para sincronizar el directorio actual de tu pc con el del cluster:
 ```
 rsync --rsh=ssh --archive --stats --progress localdir/ \
         <usuario>@<dirección_cluster>:/direccion/de/la/carpeta/remota
-        
+http://www.tchpc.tcd.ie/node/432
+
 ## BBCP
 Tambien se puede usar para transferir grandes volumenes de datos sin encriptar
 https://github.com/eeertekin/bbcp
