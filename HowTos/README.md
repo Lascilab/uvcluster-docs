@@ -6,3 +6,4 @@
 # [¿Cómo hago una replica del cluster en mi computador?](AMBIENTEWORK.md)
 # [¿Cómo puedo instalar un software en particular en el cluster?](NEWSOFTWARE.md)
 # [Mis trabajos dependen entre sí, ¿cómo puedo organizarlos?](DEPENDENCIAS.md)
+# [¿Cómo abro varias ventanas de ssh?](SSHMULT.md)

@@ -21,3 +21,5 @@ Puede ser con `git init` pero se sugiere usar los pasos de github
 `git push origin master`
 ## Recibir los cambios desde un repositorio remoto
 `git pull origin master`
+
+> ¿deberiamos usar y permitir el uso de gitlab?

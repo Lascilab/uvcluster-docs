@@ -1,0 +1,11 @@
+# "condor_submit -interactive"
+universe = vanilla
+executable = /bin/sleep
+arguments = 180
+environment = "TMOUT=7200"
+transfer_executable = false
+copy_to_spool = false
+notification = never
+priority = 1000
+request_memory = 512m
+queue

@@ -5,10 +5,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam velit turpis, f
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam velit turpis, finibus sit amet imperdiet ut, venenatis a diam. Aliquam erat volutpat. Sed mi nulla, cursus eget consectetur pulvinar, lacinia eu nunc. Vestibulum auctor magna vitae odio eleifend, vitae accumsan dui sodales. Ut iaculis arcu at nunc rutrum faucibus. Nunc in dui venenatis, lobortis ex nec, congue ipsum.
 
 ### Clientes SCP
-Windows | Linux
------------- | -------------
-WinSCP | Línea de comandos*
-Reminna | Reminna
+Windows | Linux | Mac |
+------------ | ------------- | -----------|
+WinSCP | Línea de comandos* | [CyberDuck](https://cyberduck.io/) |
+Reminna | Reminna | .. |
 
 ### Conexión usando la línea de comandos
 

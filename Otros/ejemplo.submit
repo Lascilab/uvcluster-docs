@@ -1,7 +1,0 @@
-universe = vanilla
-#log = p.log
-#output = p.out
-#error = p.err
-
-transfer_input_files = ejemplo.submit
-queue
