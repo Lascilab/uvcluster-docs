@@ -43,7 +43,24 @@ $ sudo service docker restart
 $ sudo service condor restart
 ```
 
+## Mac OS X
+Necesitas instalar XCode, XCode  command-line tools y Homebrew
+```
+$ brew tap pegasus-isi/tools
+$ brew install htcondor
+```
+Una vez la instalación se complete será necesario iniciar el servicio de HTCondor:
+```
+$ brew tap homebrew/services
+$ brew services list
+$ brew services start htcondor
+```
+Para instalar Docker...
+
 ## Windows
+Puedes decargar HTCondor desde su [página oficial](http://research.cs.wisc.edu/htcondor/downloads/)
+
+Seleccionando la version apropiada, que para la fecha es `condor-8.5.7-382922-Windows-x86.msi`
 
 > Si se encuentra en Windows, le sugerimos crear una máquina virtual de Ubuntu o Centos
 
