@@ -20,6 +20,3 @@ Al igual que Matlab, tiene varios ejemplos
 ## [Mathematica](mathematica/README.md)
 > Falla
 Muestra un ejemplo de una aplicación que no usa Docker
-
-## [Julia](julia/README.md)
-> Para agregar

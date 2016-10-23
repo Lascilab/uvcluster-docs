@@ -26,7 +26,7 @@ PANDOC=/usr/bin/pandoc
 
 PANDOC_OPTIONS=--smart --standalone
 
-PANDOC_HTML_OPTIONS=--to html5
+PANDOC_HTML_OPTIONS=--to html5 --template template/pbat/standalone.html --css template/pbat/template.css --toc --toc-depth=2
 PANDOC_PDF_OPTIONS=
 PANDOC_DOCX_OPTIONS=
 PANDOC_RTF_OPTIONS=

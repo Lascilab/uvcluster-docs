@@ -8,80 +8,17 @@ guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los
 
 > Invitamos a los nuevos usuarios a revisar con especial atención el contenido sobre la "Forma de trabajo"
 
-### [Introducción](Introduccion/README.md)
-Sobre las cuestiones administraticas del cluster.
- - ¿Quienes somos?
- - ¿Con qué infraestructura contamos?
- - ¿Tiene dudas al respecto de lo que ha leído al momento?
-
-### [Acceso](Acceso/README.md)
-Sobre el acceso al cluster y sus recursos
- - ¿Cómo realizar una solicitud para obtener las creedenciales de acceso?
- - Con las credenciales, ¿cómo se accede al clúster?
- - ¿Cómo enviar archivos? SFTP, SCP
-
-### [Definiciones](Definiciones/README.md)
-Sobre la terminología en esta wiki
- - HTCondor
- - Docker
- - Ubuntu-Linux
- - SSH
- - Git
-
-### [Forma de trabajo](FormaDeTrabajo/README.md)
-Sobre como pensamos que se podria usar el cluster
- - General
- - Orquestación de contenedores (Docker Swarm, K8s)
- - Excepciones
-
-### [Tutorial](Tutorial/README.md)
-> Siento que esta sección deberia tener un tutorial que, paso por paso, enseñe al lector sobre cómo usar el cluster.
-> Si bien es cierto que es la finalidad de las demas secciones, esta en particular merece reunir a la mayoria porque debe amigable y pedagógica
-> con los nuevos usuarios.
-
-### [Casos](Casos/README.md)
-Ejemplos prácticos y útiles
- - Touch (Básico)
- - Matlab
- - Octave
- - R
- - Mathematica
- - Julia
-
-### [How To](HowTos/README.md)
-Guias
- - :star: ¿Cómo hago una replica del clúster en mi computador?
- - :star: ¿Cómo puedo instalar un software en particular en el cluster?
- - :star: ¿Cómo creo una imagen de docker a partir de un contenedor?
- - :star: ¿Cómo envío mi imagen al repositorio del clúster?
- - :star: ¿Cómo publico una imagen de docker en dockerhub? dockerhub, docker push
- - :star: Sin usar git ¿Cómo mantengo actualizada la misma carpeta en mi pc y en el cluster? 
- - :star: :star: ¿Cómo creo una imagen de docker usando un Dockerfile?
- - :star: :star: Mis trabajos dependen entre sí, ¿cómo puedo organizarlos? Dagman, Swift, Pegasus
- - :star: :star: :star: ¿Cómo publico automáticamente una imagen de docker en dockerhub?
-
-### [Debugging y problemas](Problemas/README.md)
-Soluciones a problemas y preguntas frecuentes
- - El estado de mi trabajo es 'H'
- - Cómo reanudar un job
-
-### [Cheat Sheet - Cursos rápidos](HowTos/README.md)
-Compendios de comandos, trucos y datos
- - Linux
- - Nano
- - HTCondor
- - HTCondor-Submitfiles
- - Docker
- - Git
-
-### [Herramientas](Herramientas/README.md)
-Guias sobre herramientas instaladas en el cluster
- - Dagman
- - Swift
- - Pegasus
-
-### [Otros](Otros/README.md)
- - Interactivos
+ - [Introducción](Introduccion/README.md) Sobre las cuestiones administraticas del cluster.
+ - [Acceso](Acceso/README.md) Sobre el acceso al cluster y sus recursos
+ - [Definiciones](Definiciones/README.md) Sobre la terminología en esta wiki
+ - [Forma de trabajo](FormaDeTrabajo/README.md) Sobre como pensamos que se podria usar el cluster
+ - [Tutorial](Tutorial/README.md) Sección que, paso por paso, enseñe al lector sobre cómo usar el cluster
+ - [Casos](Casos/README.md) Ejemplos prácticos y útiles
+ - [How To](HowTos/README.md) Guias rápidas sobre temas varios
+ - [Debugging y problemas](Problemas/README.md) Soluciones a problemas y preguntas frecuentes
+ - [Cheat Sheet - Cursos rápidos](HowTos/README.md) Compendios de comandos, trucos y datos
+ - [Herramientas](Herramientas/README.md) Guias sobre herramientas instaladas en el cluster
+ - [Otros](Otros/README.md)
 
 ### Notas
 Esta documentación puede ser seguida y generada en el clúster usando un [Lynx](http://lynx.browser.org/), [pandoc](http://pandoc.org/demos.html) y Makefile
