@@ -9,14 +9,15 @@
 
 HTCondor está preparado para ejecutar un gran número de aplicaciones de matlab de manera concurrente en un cluster computacional. Si la aplicación contiene el mismo análisis para un conjunto de datos o ejecuta la misma computación para diferentes valores iniciales (como por ejemplo aplicaciones de los métodos de montecarlo), HTCondor puede reducir significativamente el tiempo necesario para obtener dichos resultados porque se encarga de agendar la ejecución del programa en diferentes hosts aprovechando los recursos.
 
-Pero quizás el obstáculo más grande para ejecutar Matlab en HTCondor se centra en el tema de las licencias porque Matlab es una software propietario con términos de licenciamiento restrictivos. Quizás la forma mas usual de crear una aplicación en Matlab consiste en escribir en varios archivos con extensión “.m” las funciones y computaciones que serán ejecutadas por el intérprete de Matlab. Pero esto representa un problema para HTCondor porque cada aplicación que se ejecuta, necesita de una licencia válida de Matlab. Por ello, una solución que se propone en este documento, consiste en compilar estos archivos .m en una aplicación que pueda correr prescindiendo del intérprete de Matlab y por tanto de la licencia que trae consigo este programa pero que, desde luego sea legal.
+Pero quizás el obstáculo más grande para ejecutar Matlab en HTCondor se centra en el tema de las licencias porque Matlab es una software propietario con términos de licenciamiento restrictivos. Quizás la forma mas usual de crear una aplicación en Matlab consiste en escribir en varios archivos con extensión `“.m”` las funciones y computaciones que serán ejecutadas por el intérprete de Matlab. Pero esto representa un problema para HTCondor porque cada aplicación que se ejecuta, necesita de una licencia válida de Matlab. Por ello, una solución que se propone en este documento, consiste en compilar estos archivos `.m` en una aplicación que pueda correr si usar el intérprete de Matlab y por tanto de la licencia que trae consigo este programa pero que, desde luego sea legal.
 
 Como analogía, la solución es equiparable al JDK y JRE de Java: mientras el primero reúne un conjunto de herramientas para el desarrollo de aplicaciones que van desde la compilación del código fuente hasta la creación de applets, el segundo es distribuido a los clientes para que puedan ejecutar dichas aplicaciones.
 
 En suma, este documento describe cómo ejecutar una aplicación de Matlab en un cluster administrado por HTCondor, el cual usa contenedores de Docker. Tiene como ventaja prescindir del uso de una licencia para ejecutar aplicaciones de Matlab pero hacerlo de manera que no infrinja los términos de licencia. 
-¿Qué es Matlab?
+
+## ¿Qué es Matlab?
 Es un ambiente multiparadigma para computación numérica. Su código fuente es propietario. 
-¿Qué es MCR?
+## ¿Qué es MCR?
 Sus iniciales indican “MATLAB Compiler Runtime”, un conjunto independiente de bibliotecas compartidas que permite la ejecución de aplicaciones o componentes compilados de MATLAB en ordenadores que no tienen instalado MATLAB. 
 
 Cada versión de Matlab trae consigo su respectiva MCR, como se muestra en la siguiente tabla:
@@ -42,7 +43,7 @@ La diferencia entre Matlab y MCR reside en varios puntos:
  - El MCR es usado de acuerdo a la versión de Matlab, así que se deben ejecutar las aplicaciones con el MCR asociado a la versión de compilador usado. Por ejemplo, si la aplicación fue compilada usando la versión 6.3 (R2016b) del compilador de Matlab, los usuarios que quieran ejecutarla deben tener MATLAB o bien MCR version 9.1 instalado.
  
 ## Una aplicación como ejemplo
-A lo largo de este documento se usará el archivo “mult.m” como ejemplo, este describe la multiplicación de dos matrices cuadradas. Cabe resaltar que las aplicaciones de Matlab deben deben tener una función que coincida con el nombre del archivo, esta función será la función principal o de entrada, además, si la aplicación espera recibir parámetros de entrada, estos ingresan a la función principal como strings.
+A lo largo de este documento se usará el archivo `“mult.m”` como ejemplo, este describe la multiplicación de dos matrices cuadradas. Cabe resaltar que las aplicaciones de Matlab deben deben tener una función que coincida con el nombre del archivo, esta función será la función principal o de entrada, además, si la aplicación espera recibir parámetros de entrada, estos ingresan a la función principal como strings.
 
 A grosso modo, una aplicación creada en Matlab para ejecutarse en HTCondor debe seguir los siguientes pasos:
 
@@ -74,15 +75,14 @@ Cada argumento tiene su explicación
 | -nojvm | Deshabilita la máquina virtual de java(JVM™).|
 | -singleCompThread | Deshabilita el uso de mas de un core de CPU |
 | -logfile | Escribe información acerca del MCR en un logfile cuando se ejecuta la aplicación |
-|-------------------------|
 
-Si una aplicación de Matlab está constituida por varios archivos o bien, el archivo principal hace llamados a funciones almacenadas en otros archivos, sus directorios deberían ser indicados al compilador usando la opción ‘-a’
+Si una aplicación de Matlab está constituida por varios archivos o bien, el archivo principal hace llamados a funciones almacenadas en otros archivos, sus directorios deberían ser indicados al compilador usando la opción `-a`
 
 La segunda forma de compilar una aplicación de Matlab puede llevarse a cabo dentro de la interfaz gráfica del IDE de Matlab
 
 > Menu > Apps > Application Compiler
 
-Ambos métodos crean un archivo binario ejecutable de la aplicación y un script cuyo nombre tiene la forma run_<funcion>.sh el cual es un ejecutable de shell que asigna las variables de entorno y contiene el nombre del ejecutable.
+Ambos métodos crean un archivo binario ejecutable de la aplicación y un script cuyo nombre tiene la forma `run_<funcion>.sh` el cual es un ejecutable de shell que asigna las variables de entorno y contiene el nombre del ejecutable.
 
 Vale la pena recordar que la compilación no es Cross Platform, así que debe ser realizada usando un sistema operativo Linux de 64 bits (eventualmente MAC).
 
@@ -107,7 +107,7 @@ RUN cd /mcr-install && \
      rm -rf mcr-install
 ```
 
-Donde input.txt es:
+Donde `input.txt` es:
 
 ```
 destinationFolder=/opt/mcr
@@ -118,7 +118,7 @@ Luego, dicha imagen puede ser construida ejecutando el comando
 
 `$ docker build -t matlab:R2016a`
 
-Cabe resaltar que la versión puede ser modificada de acuerdo a la variable de ambiente $MATLAB_VER y que el tag de la imagen debería coincidir con esta.
+Cabe resaltar que la versión puede ser modificada de acuerdo a la variable de ambiente `$MATLAB_VER` y que el tag de la imagen debería coincidir con esta.
 
 ## ¿Cómo ejecuto la aplicación en el contenedor?
 Luego de tener la imagen del MCR, una aplicación compilada de Matlab se puede ejecutar usando un contenedor en la carpeta que la contiene, de esta forma:
@@ -132,7 +132,7 @@ Para luego, dentro del contenedor:
 ## ¿Cómo usarlo con HTCondor?
 El archivo de entrada para ejecutar Jobs en HTCondor es un submitfile, en el cual se describen las características del programa a ejecutar, los argumentos y otras variables. La configuración de este archivo para Matlab debe invocar el script de ejecución generado por Matlab, el cual recibe como argumentos el directorio donde se encuentra el MCR y los argumentos intrínsecos a la aplicación de Matlab.
 
-Ademas, para evitar inconvenientes, se asignan dos variables de entorno MCR_CACHE_ROOT y MATLAB_PREFDIR.
+Ademas, para evitar inconvenientes, se asignan dos variables de entorno `MCR_CACHE_ROOT` y `MATLAB_PREFDIR`.
 
 condor_file.submit
 ```
