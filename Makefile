@@ -26,7 +26,8 @@ PANDOC=/usr/bin/pandoc
 
 PANDOC_OPTIONS=--smart --standalone
 
-PANDOC_HTML_OPTIONS=--to html5 --template template/pbat/standalone.html --css template/pbat/template.css --toc --toc-depth=2
+#PANDOC_HTML_OPTIONS=--to html5 --template template/pbat/standalone.html --css template/pbat/template.css --toc --toc-depth=2
+PANDOC_HTML_OPTIONS=--to html5
 PANDOC_PDF_OPTIONS=
 PANDOC_DOCX_OPTIONS=
 PANDOC_RTF_OPTIONS=
@@ -37,7 +38,7 @@ PANDOC_EPUB_OPTIONS=--to epub3
 # Pattern-matching Rules $(notdir ...)
 
 %.html : %.md
-	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_HTML_OPTIONS) -o $@ $<
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_HTML_OPTIONS) $< | sed 's/\.md/\.html/' > $@
 
 %.pdf : %.md
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) -o $@ $<
