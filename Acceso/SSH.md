@@ -1,5 +1,8 @@
 # Conexiones
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam velit turpis, finibus sit amet imperdiet ut, venenatis a diam. Aliquam erat volutpat. Sed mi nulla, cursus eget consectetur pulvinar, lacinia eu nunc. Vestibulum auctor magna vitae odio eleifend, vitae accumsan dui sodales. Ut iaculis arcu at nunc rutrum faucibus. Nunc in dui venenatis, lobortis ex nec, congue ipsum. Vestibulum pulvinar ultricies purus vel consectetur. Praesent leo enim, dapibus quis pellentesque quis, sodales nec quam. Curabitur luctus nulla ex, sed sollicitudin odio ullamcorper sed. Mauris molestie tincidunt lacinia. Praesent eu semper ligula. Duis nec sollicitudin turpis. In porta vitae ipsum vitae feugiat. Aliquam aliquet ultricies turpis. Morbi luctus neque ac mauris ultrices cursus. Mauris dignissim ipsum ac pharetra lobortis.
+La forma mas común de acceder al cluster es hacerla utilizando un cliente de SSH. Puedes elegir entre una plentora dependiendo del
+sistema operativo en el que te encuentres o la afinidad con el programa elegido. 
+
+> Recuerda que para acceder necesitas tener tanto el nombre de usuario como la contraseña de tu cuenta.
 
 ## Clientes SSH
 El acceso al cluster se realiza utilizando un programa de ssh llamado cliente a través del puerto 22.
@@ -10,18 +13,20 @@ Putty | Línea de comandos*
 Reminna | Reminna
 
 ## Conexión por consola
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam velit turpis, finibus sit amet imperdiet ut, venenatis a diam. Aliquam erat volutpat. Sed mi nulla, cursus eget consectetur pulvinar, lacinia eu nunc. Vestibulum auctor magna vitae odio eleifend, vitae accumsan dui sodales. Ut iaculis arcu at nunc rutrum faucibus. Nunc in dui venenatis, lobortis ex nec, congue ipsum. Vestibulum pulvinar ultricies purus vel consectetur. Praesent leo enim, dapibus quis pellentesque quis, sodales nec quam. Curabitur luctus nulla ex, sed sollicitudin odio ullamcorper sed. Mauris molestie tincidunt lacinia. Praesent eu semper ligula. Duis nec sollicitudin turpis. In porta vitae ipsum vitae feugiat. Aliquam aliquet ultricies turpis. Morbi luctus neque ac mauris ultrices cursus. Mauris dignissim ipsum ac pharetra lobortis.
+Si estas usando Linux es probable que ya cuentes con el cliente de SSH, de no ser así, puedes descargarlo ejecutando el comando `sudo apt-get install openssh-client` o bien descargando el paquete apropiado para tu distribución. Luego de tenerlo, abre una terminal y ejecuta el comando
 
 ```
 ssh <usuario>@<dirección_cluster>
 ```
 
 ## Conexión usando Putty
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam velit turpis, finibus sit amet imperdiet ut, venenatis a diam. Aliquam erat volutpat. Sed mi nulla, cursus eget consectetur pulvinar, lacinia eu nunc. Vestibulum auctor magna vitae odio eleifend, vitae accumsan dui sodales. Ut iaculis arcu at nunc rutrum faucibus. Nunc in dui venenatis, lobortis ex nec, congue ipsum. Vestibulum pulvinar ultricies purus vel consectetur. Praesent leo enim, dapibus quis pellentesque quis, sodales nec quam. Curabitur luctus nulla ex, sed sollicitudin odio ullamcorper sed. Mauris molestie tincidunt lacinia. Praesent eu semper ligula. Duis nec sollicitudin turpis. In porta vitae ipsum vitae feugiat. Aliquam aliquet ultricies turpis. Morbi luctus neque ac mauris ultrices cursus. Mauris dignissim ipsum ac pharetra lobortis.
+Si estas usando Windows (XP, Vista, 7, 8 o 10), puedes usar Putty, un cliente de SSH fácil de configurar y de usar. Descargalo desde [esta](https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe) página. No hace falta instalarlo porque se trata de un programa portable, asi que haz doble click sobre su ícono y aparecerá esta ventana
 
-<insertar imagen>
+![Image of Yaktocat](https://developers.openshift.com/images/overview-ssh-putty-configure-3.png)
+
+En el campo `Hostname o ip` ingresa la IP del cluster, selecciona el botón `open` luego se abrirá una consola en la que podras colocar tu nombre de usuario y la contraseña asignada.
 
 ## Conexión usando Remmina
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam velit turpis, finibus sit amet imperdiet ut, venenatis a diam. Aliquam erat volutpat. Sed mi nulla, cursus eget consectetur pulvinar, lacinia eu nunc. Vestibulum auctor magna vitae odio eleifend, vitae accumsan dui sodales. Ut iaculis arcu at nunc rutrum faucibus. Nunc in dui venenatis, lobortis ex nec, congue ipsum. Vestibulum pulvinar ultricies purus vel consectetur. Praesent leo enim, dapibus quis pellentesque quis, sodales nec quam. Curabitur luctus nulla ex, sed sollicitudin odio ullamcorper sed. Mauris molestie tincidunt lacinia. Praesent eu semper ligula. Duis nec sollicitudin turpis. In porta vitae ipsum vitae feugiat. Aliquam aliquet ultricies turpis. Morbi luctus neque ac mauris ultrices cursus. Mauris dignissim ipsum ac pharetra lobortis.
+Tanto para Windows como para Linux puedes usar Remmina, un cliente de SSH, SCP y SFTP. 
 
-Para mas información visitar la siguiente [página](http://www.remmina.org/wp/)
+Para mas información visita la siguiente [página](http://www.remmina.org/wp/)
