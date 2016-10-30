@@ -9,11 +9,11 @@ El laboratorio esta bajo la dirección del profesor John Sanabria quien cuenta c
 
 | Nombre | Programa | Area |
 |--------|----------|------|
-| Carlos Arango| Est. doctorado | Cambio climático, HTC, virtualización |
-| Jhon Caballero | Est. ingeniería de Sistemas | Virtualización y Orquestación de Servicios |
-| Carlos Roman | Est. ingeniería de Sistemas | HTC, virtualización, Homepage |
+| Carlos Arango | Est. doctorado | Cambio climático, HTC, virtualización |
+| Jhon Caballero| Est. ingeniería de Sistemas | Virtualización y Orquestación de Servicios |
+| Carlos Roman  | Est. ingeniería de Sistemas | HTC, virtualización, Homepage |
 | Aurelio Vivas | Est. ingeniería de Sistemas | Programación en paralelo |
-| Edier Zapata | Est. maestría | HTC |
+| Edier Zapata  | Est. maestría | HTC |
 
 Para contactarnos enviar un correo a [Lascilab](mailto:laboratorio.redesysd@correounivalle.edu.co ).
 

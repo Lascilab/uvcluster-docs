@@ -1,5 +1,4 @@
 executable = /usr/bin/octave
-#executable = octave
 arguments = mandelbrot.m $(cluster) $(process)
 universe = vanilla
 should_transfer_files   = YES

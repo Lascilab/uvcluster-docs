@@ -1,14 +1,12 @@
-#universe               = vanilla
 universe                = docker
 docker_image            = docker.io/gcc
-executable              = ./ejecutar.sh
-arguments               = $(Process)
+executable              = ./main
+arguments               = $(TDECREDITO)
 should_transfer_files   = YES
-transfer_input_files    = OutputData, main, ejecutar.sh
-transfer_output_files   = OutputData
+transfer_input_files    = main
 when_to_transfer_output = ON_EXIT
 output                  = $(Process).$(Cluster).out
 error                   = $(Process).$(Cluster).err
 log                     = $(Process).$(Cluster).log
-# request_memory          = 10M
-queue 10
+request_memory          = 20M
+queue TDECREDITO in 49927398716, 49927398717, 1234567812345678, 1234567812345670

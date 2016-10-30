@@ -1,16 +1,11 @@
-executable = math.sh
 universe = vanilla
+executable = math.sh
+should_transfer_files = YES
+transfer_input_files = quine.m
+transfer_output_files = file
 Log = log.$(Cluster).$(Process)
 Output = out.$(Cluster).$(Process)
 Error = err.$(Cluster).$(Process)
-
 WhenToTransferOutput = ON_EXIT
-should_transfer_files = YES
-transfer_input_files = FiniteElements.m
-transfer_output_files = FiniteElement.gif
-
-Arguments = FiniteElements.m
-
 requirements = (HAS_MATH_LICENSE =?= True)
-
 queue 1

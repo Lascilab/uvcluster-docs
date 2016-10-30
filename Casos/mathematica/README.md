@@ -1,13 +1,7 @@
-# Casos de uso
-A continuación se muestran algunos casos de uso de aplicaciones cientificas en el cluster
-## Touch
+# Mathematica
+Mathematica es un programa utilizado en áreas científicas, de ingeniería, matemática y áreas computacionales. Originalmente fue concebido por Stephen Wolfram, quien continúa siendo el líder del grupo de matemáticos y programadores que desarrollan el producto en Wolfram Research, compañía ubicada en Champaign, Illinois. Comúnmente considerado como un sistema de álgebra computacional, Mathematica es también un poderoso lenguaje de programación de propósito general.
 
-## Matlab
+Esta instalado en el cluster con su respectiva licencia y no hace uso de Docker para ejecutar los programas.
 
-## Octave
-
-## R
-
-## Mathematica
-
-## BLAST
+## Ejemplo
+El ejemplo que se encuentra consignado en esta sección se denomina `Quine`, es un programa que lee su código fuente y lo guarda en otro archivo.
