@@ -14,8 +14,8 @@ guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los
  - [Forma de trabajo](FormaDeTrabajo/README.md) Sobre como pensamos que se podria usar el cluster
  - [Tutorial](Tutorial/README.md) Sección que, paso por paso, enseñe al lector sobre cómo usar el cluster
  - [Casos](Casos/README.md) Ejemplos prácticos y útiles
+ - [Monitoreo y control](Control/README.md) Monitoreo y control de los jobs
  - [How To](HowTos/README.md) Guias rápidas sobre temas varios
- - [Debugging y problemas](Problemas/README.md) Soluciones a problemas y preguntas frecuentes
  - [Cheat Sheet - Cursos rápidos](HowTos/README.md) Compendios de comandos, trucos y datos
  - [Herramientas](Herramientas/README.md) Guias sobre herramientas instaladas en el cluster
  - [Otros](Otros/README.md)
