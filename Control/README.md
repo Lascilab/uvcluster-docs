@@ -28,11 +28,11 @@ Por defecto este comando imprime el ID de la tarea (clusterID.processID), el due
 | I  | idle | Esperanndo un nodo para empezar su ejecución|
 | R  | running| Corriendo |
 | H  | on hold | Ocurrio un error entonces espera una acción del usuario (control)|
-| S  | suspended | |
-| C  | completed | |
-| X  | removed   | |
+| S  | suspended | . |
+| C  | completed | . |
+| X  | removed   | . |
 | <: | - | Transfiriendo datos de entrada |
-| >: | - | Transfiriendo datos de salida |
+| \>: | - | Transfiriendo datos de salida |
 
 ### Revisar el estado de un job
  - Para revisar el estado de un solo job basta con ejecutar el comando donde muestra todos los jobs para el usuario `<usuario>` en el cluster
