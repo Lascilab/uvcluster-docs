@@ -16,7 +16,7 @@ guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los
  - [Casos](Casos/README.md) Ejemplos prácticos y útiles
  - [Monitoreo y control](Control/README.md) Monitoreo y control de los jobs
  - [How To](HowTos/README.md) Guias rápidas sobre temas varios
- - [Cheat Sheet - Cursos rápidos](HowTos/README.md) Compendios de comandos, trucos y datos
+ - [Cheat Sheet - Cursos rápidos](CheatCheat/README.md) Compendios de comandos, trucos y datos
  - [Herramientas](Herramientas/README.md) Guias sobre herramientas instaladas en el cluster
  - [Otros](Otros/README.md)
 
