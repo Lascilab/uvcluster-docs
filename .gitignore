@@ -2,3 +2,4 @@
 *.html
 *.odt
 template/*
+_book/*

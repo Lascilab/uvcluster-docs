@@ -4,3 +4,9 @@ linx
 make
 [Optional]
 pdflatex
+
+$ npm install gitbook-cli -g
+$ gitbook init
+$ gitbook serve
+$ gitbook build
+
