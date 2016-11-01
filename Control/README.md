@@ -24,7 +24,7 @@ condor_q
 Por defecto este comando imprime el ID de la tarea (clusterID.processID), el dueño, el tiempo cuando lo enviaron, el tiempo que lleva ejecutandose, el estado, la prioridad, el tamaño y por último el comando ejecutado. A continución se muestra cada estado y su explicación.
 
 |Estado | .  | Significado |
-|--------------------------|
+|-------|----|-------------|
 | I  | idle | Esperanndo un nodo para empezar su ejecución|
 | R  | running| Corriendo |
 | H  | on hold | Ocurrio un error entonces espera una acción del usuario (control)|
