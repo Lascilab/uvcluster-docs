@@ -105,6 +105,9 @@ condor_userprio
 ```
 condor_history:
 ```
+## Tiempo
+De un job se puede calcular varios tiempos...
+
 ## Control
 Luego de tener información precisa sobre el estado de nuestros jobs, podremos llevar a cabo acciones sobre los mismos de acuerdo a nuestras necesidades
 
