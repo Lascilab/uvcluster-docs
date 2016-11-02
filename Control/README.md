@@ -131,6 +131,8 @@ https://research.cs.wisc.edu/htcondor/manual/v7.8/condor_rm.html
 $ condor_rm <cluster ID>[.<process ID>] -name <schedd_string>
 ```
 ### Editar un job que esta pendiente en la cola
+Puedes editar los requisitos de un Job ejecutando el comando
+
 https://research.cs.wisc.edu/htcondor/manual/v7.8/condor_qedit.html
 ```
 $ condor_qedit
