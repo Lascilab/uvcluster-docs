@@ -13,3 +13,21 @@ a la siguiente dirección laboratorio.redesysd@correounivalle.edu.co, manifestan
  - Descripción de los programas a utilizar o del workflow
 
 El encargado revisará su solicitud y responderá con la mayor brevedad posible.
+
+## Ejemplo
+```
+Cordial saludo.
+
+Mi nombre es YYY, estudiante de BBB, de la Escuela MMM de la Universidad del Valle.
+Estoy trabajando en JJJ, dirigida por el profesor GGG y por lo tanto necesito usar el cluster de la universidad.
+
+Para lo anterior se requieren los siguientes programas: 
+
+ - FFmpeg (https://github.com/FFmpeg/FFmpeg) versión 4.5
+ - Convnetjs (https://github.com/karpathy/convnetjs)
+ - Japronto (https://github.com/squeaky-pl/japronto)
+
+De antemano muchas gracias,
+
+YYY
+```
