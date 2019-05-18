@@ -1,38 +1,46 @@
-Uvclúster wiki
+HTCondor UVCluster Documentation
 =========
 
-![](http://compras.univalle.edu.co/imagenes/fotos/banner-estrategia-1.jpg)
+A computer cluster is a set of connected computers that work together so that, in many respects, they can be viewed as a single system. Unlike traditional desktop computers, clusters have greater computing capacity ideal for problems related to Computational Fluid Dynamics, Machine and Deep Learning, Bioinformatics, Data Science, Computational Physics and others.
 
-Se trata del compendio sobre el conocimiento y uso del clúster computacional de la Universidad del Valle, ubicada en Cali - Colombia. Con ella pretendemos 
-guiar a los nuevos usuarios, fomentar el buen uso y las buenas prácticas de los existentes y contribuir al conocimiento de los administradores de clústers.
+# Who can use the Cluster
 
-> Invitamos a los nuevos usuarios a revisar con especial atención el contenido sobre la "Forma de trabajo"
+* Undergraduate, masters and doctoral students at Universidad del Valle related in a research project.
+* Agreement with other universities (in development).
 
- - [Introducción](Introduccion/README.md) Sobre las cuestiones administraticas del cluster.
- - [Acceso](Acceso/README.md) Sobre el acceso al cluster y sus recursos
- - [Definiciones](Definiciones/README.md) Sobre la terminología en esta wiki
- - [Forma de trabajo](FormaDeTrabajo/README.md) Sobre como pensamos que se podria usar el cluster
- - [Tutorial](Tutorial/README.md) Sección que, paso por paso, enseñe al lector sobre cómo usar el cluster
- - [Casos](Casos/README.md) Ejemplos prácticos y útiles
- - [Monitoreo y control](Control/README.md) Monitoreo y control de los jobs
- - [How To](HowTos/README.md) Guias rápidas sobre temas varios
- - [Cheat Sheet - Cursos rápidos](CheatCheat/README.md) Compendios de comandos, trucos y datos
- - [Herramientas](Herramientas/README.md) Guias sobre herramientas instaladas en el cluster
- - [Otros](Otros/README.md)
+# How Getting Started
 
-### Notas
-Esta documentación puede ser seguida y generada en el clúster usando un [Lynx](http://lynx.browser.org/), [pandoc](http://pandoc.org/demos.html) y Makefile
+1. Your advisor must send an email (through the institutional address) to laboratorio.redesysd@correounivalle.edu.co with subject **Acceso al Cluster**. Plase, use the following template.
+
 ```
-make && lynx index.html
+Cordial saludo,
+
+Mi nombre es <your_namer_here>, estudiante de <your_career_here> de la Universidad del Valle. Estoy trabajando en <your_research_subjet>, dirigida por el profesor <advisor_name>. Por lo anterior, requerimos hacer uso del cluster de la universidad.
+
+Para lo anterior se requieren los siguientes programas: 
+
+ - FFmpeg (https://github.com/FFmpeg/FFmpeg) versión 4.5
+ - Convnetjs (https://github.com/karpathy/convnetjs)
+ - Japronto (https://github.com/squeaky-pl/japronto)
+
+De antemano muchas gracias,
 ```
-### A considerar
- - Incentivar el uso de Git y github
- - Organizar la wiki de tal manera que la dificultadad sea gradual: iniciando con los motivadores
 
-## Responsables
-[LASCILAB](http://lascilab.univalle.edu.co/)
-> Invitamos a los responsables a revisar el progreso de cada documento [aquí](ESTADO.md)
-> IMPORTANTE: Fomentemos el uso de versiones en las imagenes de docker, eso ahorra ancho de banda (ubuntu:latest != ubuntu:14.04)
+2. You will receive an email with the credentials for the cluster. Additionally, we will assign you a student from the laboratory (a tutor) who will be responsible for following your process in the use of the cluster until the end of your research process.
 
-## Convencion
-> http://docs.openstack.org/newton/install-guide-ubuntu/common/conventions.html
+3. You should follow the tutorial to use the cluster. When the assigned tutor specifies that you are ready to use the cluster, he will enable your access credentials.
+
+4. You must sign the cluster usage policy.
+
+5. At the end of the research process we ask you to fill out the user satisfaction form for the cluster.
+
+## Do you want to be a tutor?
+
+A tutor helps other researchers to use the cluster properly, this is a voluntary work that aims to promote the advantages of using the computational cluster.
+
+Send us an email
+
+## References
+
+* [Getting Started Gitbook Documentation using Markdown](https://www.netlify.com/blog/2015/12/08/a-step-by-step-guide-gitbook-on-netlify/)
+* [GitBook Cli and GitBook Web](https://docs.gitbook.com/v2-changes/important-differences)
