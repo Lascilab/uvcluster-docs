@@ -1,14 +1,17 @@
-HTCondor UVCluster Documentation
-=========
+# HTCondor Cluster User Documentation
+
+<p align="center">
+  <img width="460" height="300" src="http://lascilab.univalle.edu.co/static/univalle/images/lascilab-logo.png">
+</p>
 
 A computer cluster is a set of connected computers that work together so that, in many respects, they can be viewed as a single system. Unlike traditional desktop computers, clusters have greater computing capacity ideal for problems related to Computational Fluid Dynamics, Machine and Deep Learning, Bioinformatics, Data Science, Computational Physics and others.
 
-# Who can use the Cluster
+## Who can use the Cluster
 
 * Undergraduate, masters and doctoral students at Universidad del Valle related in a research project.
 * Agreement with other universities (in development).
 
-# How Getting Started
+## How to Getting Started
 
 1. Your advisor must send an email (through the institutional address) to laboratorio.redesysd@correounivalle.edu.co with subject **Acceso al Cluster**. Plase, use the following template.
 
@@ -38,9 +41,10 @@ De antemano muchas gracias,
 
 A tutor helps other researchers to use the cluster properly, this is a voluntary work that aims to promote the advantages of using the computational cluster.
 
-Send us an email
+Send us an email,
 
-## References
 
-* [Getting Started Gitbook Documentation using Markdown](https://www.netlify.com/blog/2015/12/08/a-step-by-step-guide-gitbook-on-netlify/)
-* [GitBook Cli and GitBook Web](https://docs.gitbook.com/v2-changes/important-differences)
+## Contact
+
+* [WEB Page](http://lascilab.univalle.edu.co//)
+* [HTCondor User Documentation](https://docs.gitbook.com/v2-changes/important-differences)
