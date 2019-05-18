@@ -49,7 +49,7 @@ cd Uvcluster
 Serve the docuementation in development.
 
 ```sh
-cd gitbook serve
+gitbook serve
 ```
 
 Look for the rendered docuemnation at http://localhost:4000/

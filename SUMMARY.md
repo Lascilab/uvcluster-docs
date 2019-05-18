@@ -1,5 +1,5 @@
 # HTCondor User Documentation
 
 * [Introduction](README.md)
-* [Quick Start](quickstart/connect_to_cluster_windows.md)
-
+* [Quick Start](quickstart/README.md)
+ * [Connection from Windows](quickstart/htcondor/connect_to_cluster_windows.md) 
